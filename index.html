@@ -74,7 +74,13 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--body);line-
 .contract-name{font-size:18px;font-weight:800;color:var(--ink)}
 .badge-active{background:#e0e7ff;border:1px solid #c7d2fe;color:#3730a3;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.06em;flex-shrink:0}
 .contract-dates{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:0;align-items:center;background:#f8faff;border-radius:var(--r-sm);padding:20px 24px;margin-bottom:20px}
-@media(max-width:560px){.contract-dates{grid-template-columns:1fr;gap:12px;text-align:center}}
+@media(max-width:560px){
+  .contract-dates{grid-template-columns:repeat(3,1fr);gap:0;padding:14px 12px}
+  .cdate-arrow{font-size:14px;opacity:.4;text-align:center}
+  .cdate-val{font-size:14px}
+  .cdate-sub{display:none}
+  .cdate-label{font-size:9px}
+}
 .cdate-item{display:flex;flex-direction:column;gap:3px}
 .cdate-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
 .cdate-val{font-size:18px;font-weight:800;color:var(--ink)}
@@ -187,6 +193,31 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--body);line-
 .legend-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
 .legend-item{display:flex;align-items:center;gap:6px;font-size:12px}
 .legend-swatch{width:10px;height:10px;border-radius:2px;display:inline-block}
+
+/* ── MOBILE COMPARE CARDS ── */
+.mobile-compare{display:none}
+@media(max-width:660px){
+  .compare-wrap{display:none}
+  .mobile-compare{display:flex;flex-direction:column;gap:14px}
+  /* ranking layout */
+  .rank-label{min-width:80px}
+  .rank-delta{min-width:52px;font-size:11px}
+  .rank-bar{font-size:10px;padding:0 6px}
+  /* conclusion */
+  .conclusion-body{flex-direction:column}
+}
+.mc-card{background:#fff;border-radius:var(--r);box-shadow:var(--sh);overflow:hidden}
+.mc-head{padding:16px 18px}
+.mc-head-name{font-size:17px;font-weight:800;color:#fff;display:block;margin-bottom:2px}
+.mc-head-role{font-size:11px;color:rgba(255,255,255,.7);display:block}
+.mc-head-price{font-size:26px;font-weight:900;color:#fff;display:block;margin-top:8px;line-height:1}
+.mc-head-vs{display:inline-block;margin-top:6px;font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px;background:rgba(239,68,68,.25);color:#fca5a5}
+.mc-rows{padding:4px 0}
+.mc-row{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;border-bottom:1px solid #f3f4f6;gap:8px}
+.mc-row:last-child{border-bottom:none}
+.mc-lbl{font-size:12px;color:var(--muted);font-weight:500;flex:1}
+.mc-val{font-size:13px;font-weight:600;text-align:right;flex-shrink:0}
+.mc-val.b{color:var(--green)}.mc-val.w{color:var(--red)}.mc-val.n{color:var(--body)}
 </style>
 </head>
 <body>
@@ -405,6 +436,64 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--body);line-
     </table>
   </div>
 
+  <!-- Cartes mobiles (masquées sur desktop, visibles < 660px) -->
+  <div class="mobile-compare">
+    <div class="mc-card">
+      <div class="mc-head" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">
+        <span class="mc-head-name">Matera Pro</span>
+        <span class="mc-head-role">Syndic classique</span>
+        <span class="mc-head-price">5 040 €<span style="font-size:13px;font-weight:400;opacity:.8"> TTC/an</span></span>
+        <span class="mc-head-vs">+838 € vs Foncia</span>
+      </div>
+      <div class="mc-rows">
+        <div class="mc-row"><span class="mc-lbl">Taux horaire</span><span class="mc-val b">150 €/h ↓</span></div>
+        <div class="mc-row"><span class="mc-lbl">Visites / an</span><span class="mc-val n">2</span></div>
+        <div class="mc-row"><span class="mc-lbl">Réunions CS</span><span class="mc-val b">4 ↑↑</span></div>
+        <div class="mc-row"><span class="mc-lbl">AG (hors forfait)</span><span class="mc-val b">Incluse ↑↑</span></div>
+        <div class="mc-row"><span class="mc-lbl">État daté</span><span class="mc-val b">Gratuit ↑↑</span></div>
+        <div class="mc-row"><span class="mc-lbl">Opposition mutation</span><span class="mc-val b">Gratuit ↑↑</span></div>
+        <div class="mc-row"><span class="mc-lbl">Révision prix</span><span class="mc-val n">IPC</span></div>
+        <div class="mc-row"><span class="mc-lbl">Durée contrat</span><span class="mc-val n">18 mois</span></div>
+      </div>
+    </div>
+    <div class="mc-card">
+      <div class="mc-head" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6)">
+        <span class="mc-head-name">EM Gestion</span>
+        <span class="mc-head-role">FNAIM</span>
+        <span class="mc-head-price">5 160 €<span style="font-size:13px;font-weight:400;opacity:.8"> TTC/an</span></span>
+        <span class="mc-head-vs">+958 € vs Foncia</span>
+      </div>
+      <div class="mc-rows">
+        <div class="mc-row"><span class="mc-lbl">Taux horaire</span><span class="mc-val b">150 €/h ↓</span></div>
+        <div class="mc-row"><span class="mc-lbl">Visites / an</span><span class="mc-val w">2 (1h min) ↓</span></div>
+        <div class="mc-row"><span class="mc-lbl">Réunions CS</span><span class="mc-val n">2</span></div>
+        <div class="mc-row"><span class="mc-lbl">AG (hors forfait)</span><span class="mc-val w">720 € ↑</span></div>
+        <div class="mc-row"><span class="mc-lbl">État daté</span><span class="mc-val n">380 €</span></div>
+        <div class="mc-row"><span class="mc-lbl">Opposition mutation</span><span class="mc-val b">150 € ↑</span></div>
+        <div class="mc-row"><span class="mc-lbl">Révision prix</span><span class="mc-val b">Aucune ↑↑</span></div>
+        <div class="mc-row"><span class="mc-lbl">Durée contrat</span><span class="mc-val n">18 mois</span></div>
+      </div>
+    </div>
+    <div class="mc-card">
+      <div class="mc-head" style="background:linear-gradient(135deg,#0369a1,#0ea5e9)">
+        <span class="mc-head-name">UMA RL</span>
+        <span class="mc-head-role">Syndic local</span>
+        <span class="mc-head-price">4 500 €<span style="font-size:13px;font-weight:400;opacity:.8"> TTC/an</span></span>
+        <span class="mc-head-vs">+298 € vs Foncia</span>
+      </div>
+      <div class="mc-rows">
+        <div class="mc-row"><span class="mc-lbl">Taux horaire</span><span class="mc-val b">120 €/h ↓↓</span></div>
+        <div class="mc-row"><span class="mc-lbl">Visites / an</span><span class="mc-val b">3 ↑↑</span></div>
+        <div class="mc-row"><span class="mc-lbl">Réunions CS</span><span class="mc-val b">3 ↑</span></div>
+        <div class="mc-row"><span class="mc-lbl">AG (hors forfait)</span><span class="mc-val b">Incluse ↑↑</span></div>
+        <div class="mc-row"><span class="mc-lbl">État daté</span><span class="mc-val b">300 € ↑</span></div>
+        <div class="mc-row"><span class="mc-lbl">Opposition mutation</span><span class="mc-val b">120 € ↑↑</span></div>
+        <div class="mc-row"><span class="mc-lbl">Révision prix</span><span class="mc-val n">+3 %/an</span></div>
+        <div class="mc-row"><span class="mc-lbl">Durée contrat</span><span class="mc-val b">12 mois ↑↑</span></div>
+      </div>
+    </div>
+  </div>
+
   <div class="legend-row">
     <span class="legend-item" style="color:var(--green)"><span class="legend-swatch" style="background:var(--green-bg);border:1px solid var(--green-bd)"></span>Meilleur que Foncia</span>
     <span class="legend-item" style="color:var(--red)"><span class="legend-swatch" style="background:var(--red-bg);border:1px solid var(--red-bd)"></span>Moins bien que Foncia</span>
@@ -510,15 +599,21 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--body);line-
 <script>
 // Ranking bars animation
 (function(){
+  function animateBars(container){
+    container.querySelectorAll('.rank-bar[data-w]').forEach(b => { b.style.width = b.dataset.w + '%'; });
+  }
+  const s = document.getElementById('classement');
+  if(!s) return;
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if(!e.isIntersecting) return;
-      e.target.querySelectorAll('.rank-bar[data-w]').forEach(b => { b.style.width = b.dataset.w + '%'; });
+      animateBars(e.target);
       obs.unobserve(e.target);
     });
-  }, {threshold:.2});
-  const s = document.getElementById('classement');
-  if(s) obs.observe(s);
+  }, {threshold:0.05});
+  obs.observe(s);
+  // Fallback : si la section est déjà visible au chargement
+  setTimeout(() => animateBars(s), 400);
 })();
 
 // Active nav
