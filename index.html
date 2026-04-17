@@ -1,1436 +1,823 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Comparatif Syndic — 101 Bd Poniatowski 75012 Paris</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --navy: #1a2e4a;
-      --navy-light: #243d60;
-      --gold: #c9a84c;
-      --gold-light: #e8c96a;
-      --white: #ffffff;
-      --gray-50: #f8fafc;
-      --gray-100: #f1f5f9;
-      --gray-200: #e2e8f0;
-      --gray-400: #94a3b8;
-      --gray-600: #475569;
-      --gray-800: #1e293b;
-      --green: #16a34a;
-      --green-bg: #dcfce7;
-      --amber: #d97706;
-      --amber-bg: #fef3c7;
-      --red: #dc2626;
-      --red-bg: #fee2e2;
-      --blue: #2563eb;
-      --blue-bg: #dbeafe;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparatif Syndic — 101 Bd Poniatowski</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0f1f3d;
+  --navy2:#162848;
+  --gold:#c9a84c;
+  --gold2:#e8c96a;
+  --white:#ffffff;
+  --bg:#f0f4f8;
+  --card:#ffffff;
+  --text:#1e293b;
+  --muted:#64748b;
+  --green:#10b981;
+  --red:#ef4444;
+  --amber:#f59e0b;
+  --border:#e2e8f0;
+  --shadow:0 4px 24px rgba(15,31,61,0.10);
+  --shadow-lg:0 8px 40px rgba(15,31,61,0.15);
+  --r:16px;
+  --r-sm:10px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:15px}
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+/* ── HEADER ── */
+.site-header{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 60%,#1e3a5f 100%);
+  color:#fff;padding:48px 20px 40px;text-align:center;position:relative;overflow:hidden
+}
+.site-header::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 60% at 70% 30%,rgba(201,168,76,.18) 0%,transparent 70%);
+  pointer-events:none
+}
+.badge-prop{display:inline-block;background:rgba(201,168,76,.2);border:1px solid rgba(201,168,76,.5);color:var(--gold2);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:5px 14px;border-radius:30px;margin-bottom:18px}
+.site-header h1{font-size:clamp(22px,5vw,38px);font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+.site-header .sub{font-size:clamp(13px,2.5vw,16px);color:rgba(255,255,255,.7);font-weight:400;margin-bottom:24px}
+.header-stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:8px}
+.hstat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:12px 20px;min-width:130px;backdrop-filter:blur(8px)}
+.hstat .val{font-size:20px;font-weight:800;color:var(--gold2);display:block;line-height:1.1}
+.hstat .lbl{font-size:11px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.05em;margin-top:2px;display:block}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--gray-50);
-      color: var(--gray-800);
-      font-size: 14px;
-      line-height: 1.6;
-    }
+/* ── NAV ── */
+.sticky-nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(15,31,61,.97);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(201,168,76,.2);
+  overflow-x:auto;white-space:nowrap;scrollbar-width:none
+}
+.sticky-nav::-webkit-scrollbar{display:none}
+.nav-inner{display:flex;gap:0;padding:0 16px;min-width:max-content;margin:0 auto;max-width:900px}
+.nav-inner a{color:rgba(255,255,255,.7);text-decoration:none;font-size:13px;font-weight:500;padding:14px 16px;display:inline-block;transition:color .2s;border-bottom:2px solid transparent}
+.nav-inner a:hover,.nav-inner a.active{color:#fff;border-bottom-color:var(--gold)}
 
-    /* ── HEADER ── */
-    header {
-      background: var(--navy);
-      color: var(--white);
-      padding: 2.5rem 2rem 2rem;
-      text-align: center;
-    }
-    .header-eyebrow {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.5rem;
-    }
-    header h1 {
-      font-size: 1.75rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.4rem;
-    }
-    header p {
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.65);
-    }
-    .header-meta {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 1.5rem;
-      flex-wrap: wrap;
-    }
-    .header-meta-item {
-      text-align: center;
-    }
-    .header-meta-item .label {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--gold);
-      font-weight: 600;
-    }
-    .header-meta-item .value {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: rgba(255,255,255,0.9);
-      margin-top: 2px;
-    }
+/* ── LAYOUT ── */
+.container{max-width:900px;margin:0 auto;padding:0 16px}
+section{padding:40px 0 0}
+.section-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.section-title{font-size:clamp(18px,4vw,26px);font-weight:800;color:var(--navy);margin-bottom:6px}
+.section-sub{color:var(--muted);font-size:14px;margin-bottom:28px}
 
-    /* ── NAV ── */
-    nav {
-      background: var(--navy-light);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      overflow-x: auto;
-      padding: 0 1rem;
-      gap: 0;
-    }
-    nav ul li a {
-      display: block;
-      padding: 0.85rem 1.1rem;
-      font-size: 12px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.65);
-      text-decoration: none;
-      white-space: nowrap;
-      border-bottom: 2px solid transparent;
-      transition: color .2s, border-color .2s;
-    }
-    nav ul li a:hover,
-    nav ul li a.active {
-      color: var(--gold);
-      border-bottom-color: var(--gold);
-    }
+/* ── ALERT BOX ── */
+.alert{border-radius:var(--r);padding:20px 22px;display:flex;gap:14px;align-items:flex-start;margin-bottom:24px}
+.alert-red{background:#fff5f5;border:1px solid #fecaca}
+.alert-amber{background:#fffbeb;border:1px solid #fde68a}
+.alert-icon{font-size:22px;flex-shrink:0;line-height:1.2}
+.alert-body h4{font-size:14px;font-weight:700;margin-bottom:4px;color:var(--text)}
+.alert-body p{font-size:13px;color:var(--muted);line-height:1.5}
 
-    /* ── MAIN LAYOUT ── */
-    main {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
-    }
+/* ── EXIT CARDS ── */
+.exit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:8px}
+@media(max-width:640px){.exit-grid{grid-template-columns:1fr}}
+.exit-card{border-radius:var(--r-sm);padding:18px;border:1px solid var(--border);background:var(--card)}
+.exit-card.red{border-top:3px solid var(--red)}
+.exit-card.amber{border-top:3px solid var(--amber)}
+.exit-card.green{border-top:3px solid var(--green)}
+.exit-dot{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;margin-bottom:10px}
+.exit-dot.red{background:#fee2e2}.exit-dot.amber{background:#fef3c7}.exit-dot.green{background:#d1fae5}
+.exit-card h4{font-size:13px;font-weight:700;margin-bottom:6px;color:var(--text)}
+.exit-card p{font-size:12px;color:var(--muted);line-height:1.5}
 
-    /* ── SECTION TITLES ── */
-    .section {
-      margin-bottom: 3rem;
-    }
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 2px solid var(--gold);
-    }
-    .section-header .section-num {
-      background: var(--navy);
-      color: var(--gold);
-      font-size: 11px;
-      font-weight: 700;
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .section-header h2 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--navy);
-      letter-spacing: -0.01em;
-    }
+/* ── PRICE RANKING ── */
+.ranking-wrap{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);padding:24px 20px;margin-bottom:12px}
+.rank-row{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.rank-row:last-child{margin-bottom:0}
+.rank-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;color:#fff}
+.rank-num.r1{background:var(--green)}.rank-num.r2{background:#6ee7b7;color:#065f46}.rank-num.r3{background:var(--amber)}.rank-num.r4{background:#fb923c}.rank-num.r5{background:var(--red)}
+.rank-name{font-size:13px;font-weight:600;width:130px;flex-shrink:0;color:var(--text)}
+.rank-name small{display:block;font-size:10px;font-weight:400;color:var(--muted);margin-top:1px}
+.rank-bar-wrap{flex:1;position:relative;height:26px}
+.rank-bar{height:26px;border-radius:6px;width:0;transition:width .9s cubic-bezier(.4,0,.2,1);min-width:4px;display:flex;align-items:center;padding:0 10px;font-size:12px;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden}
+.rank-bar.ref{background:var(--navy);opacity:.7}
+.rank-bar.best{background:linear-gradient(90deg,#059669,#10b981)}
+.rank-bar.high{background:linear-gradient(90deg,#d97706,#f59e0b)}
+.rank-bar.highest{background:linear-gradient(90deg,#dc2626,#ef4444)}
+.rank-delta{font-size:12px;font-weight:700;width:80px;text-align:right;flex-shrink:0}
+.rank-delta.save{color:var(--green)}.rank-delta.more{color:var(--red)}.rank-delta.same{color:var(--muted)}
 
-    /* ── CONTEXT SECTION ── */
-    .alert-box {
-      background: #fff7ed;
-      border: 1px solid #fed7aa;
-      border-left: 4px solid #f97316;
-      border-radius: 8px;
-      padding: 1.25rem 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-    .alert-box .alert-title {
-      font-size: 0.875rem;
-      font-weight: 700;
-      color: #9a3412;
-      margin-bottom: 0.4rem;
-    }
-    .alert-box p {
-      font-size: 0.8125rem;
-      color: #7c2d12;
-      line-height: 1.55;
-    }
+/* ── SYNDIC CARDS ── */
+.cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:580px){.cards-grid{grid-template-columns:1fr}}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;transition:box-shadow .2s,transform .2s}
+.card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+.card-head{padding:18px 20px 14px;position:relative}
+.card-matera-coop .card-head{background:linear-gradient(135deg,#059669,#10b981)}
+.card-matera-pro .card-head{background:linear-gradient(135deg,#9333ea,#a855f7)}
+.card-em .card-head{background:linear-gradient(135deg,#1d4ed8,#3b82f6)}
+.card-uma .card-head{background:linear-gradient(135deg,#0369a1,#0ea5e9)}
+.card-badge{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.8);background:rgba(255,255,255,.15);border-radius:20px;padding:3px 10px;display:inline-block;margin-bottom:8px}
+.card-head h3{font-size:17px;font-weight:800;color:#fff;margin-bottom:2px}
+.card-head .price-big{font-size:26px;font-weight:800;color:#fff;display:flex;align-items:baseline;gap:4px}
+.card-head .price-big span{font-size:13px;font-weight:400;opacity:.8}
+.card-head .vs-foncia{font-size:12px;font-weight:600;margin-top:4px;padding:3px 10px;border-radius:20px;display:inline-block}
+.save-tag{background:rgba(16,185,129,.25);color:#a7f3d0}
+.more-tag{background:rgba(239,68,68,.25);color:#fca5a5}
+.card-body{padding:16px 20px}
+.kv-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.kv-row{display:flex;justify-content:space-between;align-items:center;font-size:13px}
+.kv-label{color:var(--muted);font-weight:500}
+.kv-value{font-weight:600;color:var(--text);text-align:right}
+.tag{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;border-radius:20px;padding:3px 9px}
+.tag.green{background:#d1fae5;color:#065f46}
+.tag.red{background:#fee2e2;color:#991b1b}
+.tag.amber{background:#fef3c7;color:#92400e}
+.tag.blue{background:#dbeafe;color:#1e40af}
+.divider{height:1px;background:var(--border);margin:12px 0}
 
-    .exit-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
-    @media (max-width: 768px) {
-      .exit-cards { grid-template-columns: 1fr; }
-    }
-    .exit-card {
-      border-radius: 10px;
-      padding: 1.25rem;
-      border: 1px solid transparent;
-    }
-    .exit-card.red {
-      background: var(--red-bg);
-      border-color: #fca5a5;
-    }
-    .exit-card.amber {
-      background: var(--amber-bg);
-      border-color: #fcd34d;
-    }
-    .exit-card.green {
-      background: var(--green-bg);
-      border-color: #86efac;
-    }
-    .exit-card .ec-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 3px 8px;
-      border-radius: 4px;
-      margin-bottom: 0.65rem;
-    }
-    .exit-card.red .ec-badge { background: #fee2e2; color: var(--red); }
-    .exit-card.amber .ec-badge { background: #fef3c7; color: #92400e; }
-    .exit-card.green .ec-badge { background: #dcfce7; color: #166534; }
-    .exit-card h3 {
-      font-size: 0.875rem;
-      font-weight: 700;
-      color: var(--gray-800);
-      margin-bottom: 0.4rem;
-    }
-    .exit-card p {
-      font-size: 0.78rem;
-      color: var(--gray-600);
-      line-height: 1.5;
-    }
-    .exit-card .ec-note {
-      margin-top: 0.5rem;
-      font-size: 0.72rem;
-      font-weight: 600;
-      opacity: 0.8;
-    }
+/* ── ACCORDION ── */
+.accordion-btn{width:100%;display:flex;justify-content:space-between;align-items:center;padding:10px 20px;border:none;background:none;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;border-top:1px solid var(--border);transition:color .2s;letter-spacing:.01em}
+.accordion-btn:hover{color:var(--navy)}
+.accordion-btn svg{transition:transform .3s;flex-shrink:0}
+.accordion-btn.open svg{transform:rotate(180deg)}
+.accordion-btn.open{color:var(--navy)}
+.accordion-panel{display:none;padding:0 20px 16px;font-size:12px;color:var(--muted);line-height:1.7}
+.accordion-panel.open{display:block}
+.fee-table{width:100%;border-collapse:collapse;margin-top:8px}
+.fee-table td{padding:5px 0;border-bottom:1px solid var(--border)}
+.fee-table td:last-child{text-align:right;font-weight:600;color:var(--text)}
+.fee-table tr:last-child td{border-bottom:none}
 
-    /* ── FONCIA CURRENT STATUS ── */
-    .foncia-status {
-      background: var(--white);
-      border: 1px solid var(--gray-200);
-      border-radius: 10px;
-      padding: 1.25rem 1.5rem;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .foncia-status .fs-icon {
-      font-size: 1.75rem;
-      flex-shrink: 0;
-    }
-    .foncia-status .fs-content { flex: 1; min-width: 200px; }
-    .foncia-status .fs-tag {
-      display: inline-block;
-      background: #fee2e2;
-      color: var(--red);
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 2px 8px;
-      border-radius: 4px;
-      margin-bottom: 0.3rem;
-    }
-    .foncia-status h3 {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--navy);
-    }
-    .foncia-status p {
-      font-size: 0.78rem;
-      color: var(--gray-600);
-      margin-top: 0.2rem;
-    }
-    .foncia-status .fs-dates {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-    .fs-date-item { text-align: center; }
-    .fs-date-item .d-label {
-      font-size: 10px;
-      color: var(--gray-400);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-    }
-    .fs-date-item .d-value {
-      font-size: 0.875rem;
-      font-weight: 700;
-      color: var(--navy);
-    }
+/* ── SCORE BARS ── */
+.score-section{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);padding:24px 20px;margin-bottom:16px}
+.score-section h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:18px}
+.score-criterion{margin-bottom:14px}
+.score-criterion:last-child{margin-bottom:0}
+.sc-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;flex-wrap:wrap;gap:4px}
+.sc-label{font-size:12px;font-weight:600;color:var(--text)}
+.sc-winner{font-size:11px;color:var(--muted)}
+.sc-bars{display:flex;flex-direction:column;gap:4px}
+.sc-bar-row{display:flex;align-items:center;gap:8px}
+.sc-name{font-size:11px;color:var(--muted);width:110px;flex-shrink:0;text-align:right}
+.sc-bar-wrap{flex:1;background:#f1f5f9;border-radius:4px;height:8px;overflow:hidden}
+.sc-bar{height:8px;border-radius:4px;transition:width .9s cubic-bezier(.4,0,.2,1);width:0}
+.sc-bar.foncia{background:var(--navy)}
+.sc-bar.matera-coop{background:var(--green)}
+.sc-bar.matera-pro{background:#a855f7}
+.sc-bar.em{background:#3b82f6}
+.sc-bar.uma{background:#0ea5e9}
 
-    /* ── COMPARISON TABLE ── */
-    .table-wrap {
-      overflow-x: auto;
-      border-radius: 10px;
-      border: 1px solid var(--gray-200);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: var(--white);
-      min-width: 720px;
-    }
-    thead th {
-      background: var(--navy);
-      color: var(--white);
-      padding: 0.85rem 1rem;
-      text-align: center;
-      font-size: 12px;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-    thead th:first-child {
-      text-align: left;
-      background: var(--navy-light);
-      min-width: 170px;
-    }
-    thead th.col-current {
-      background: #2d4a6e;
-      position: relative;
-    }
-    thead th.col-current::after {
-      content: "EN COURS";
-      display: block;
-      font-size: 9px;
-      color: #fca5a5;
-      letter-spacing: 0.08em;
-      margin-top: 2px;
-    }
-    thead th .syndic-type {
-      display: block;
-      font-size: 9px;
-      font-weight: 400;
-      color: rgba(255,255,255,0.55);
-      margin-top: 2px;
-    }
+/* ── FONCIA REFERENCE ── */
+.foncia-ref{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);padding:24px 20px;margin-bottom:16px;border-left:4px solid var(--navy)}
+.foncia-ref h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.foncia-ref h3 span{background:var(--navy);color:#fff;font-size:10px;padding:3px 8px;border-radius:20px;font-weight:600;letter-spacing:.05em}
+.foncia-kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:500px){.foncia-kpi{grid-template-columns:repeat(2,1fr)}}
+.fkpi{background:#f8fafc;border-radius:8px;padding:12px}
+.fkpi .v{font-size:17px;font-weight:800;color:var(--navy);line-height:1.1}
+.fkpi .l{font-size:11px;color:var(--muted);margin-top:3px}
 
-    tbody tr:nth-child(even) { background: var(--gray-50); }
-    tbody tr:hover { background: #f0f6ff; }
+/* ── PRIX TABLE ── */
+.price-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--r);box-shadow:var(--shadow);margin-bottom:12px}
+.price-table{width:100%;border-collapse:collapse;background:var(--card);min-width:580px}
+.price-table th{background:var(--navy);color:#fff;font-size:12px;font-weight:600;padding:12px 14px;text-align:center;letter-spacing:.03em}
+.price-table th:first-child{text-align:left}
+.price-table td{font-size:13px;padding:10px 14px;border-bottom:1px solid var(--border);text-align:center;vertical-align:middle}
+.price-table td:first-child{text-align:left;font-weight:600;color:var(--muted);font-size:12px}
+.price-table tr:last-child td{border-bottom:none}
+.price-table .best-cell{background:#f0fdf4;color:#065f46;font-weight:700}
+.price-table .worst-cell{background:#fef2f2;color:#991b1b;font-weight:700}
+.price-table .col-foncia{background:#f8fafc}
 
-    tbody td {
-      padding: 0.7rem 1rem;
-      border-bottom: 1px solid var(--gray-100);
-      text-align: center;
-      font-size: 0.8rem;
-    }
-    tbody td:first-child {
-      text-align: left;
-      font-weight: 600;
-      font-size: 0.78rem;
-      color: var(--gray-600);
-      background: var(--white);
-    }
-    tbody tr:nth-child(even) td:first-child { background: var(--gray-50); }
-    tbody tr:hover td:first-child { background: #f0f6ff; }
+/* ── PDF LINKS ── */
+.pdf-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(max-width:500px){.pdf-grid{grid-template-columns:1fr}}
+.pdf-link{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--card);border-radius:var(--r-sm);border:1px solid var(--border);text-decoration:none;color:var(--text);transition:border-color .2s,box-shadow .2s}
+.pdf-link:hover{border-color:var(--gold);box-shadow:var(--shadow)}
+.pdf-icon{width:36px;height:36px;background:#fee2e2;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+.pdf-info .name{font-size:13px;font-weight:600;line-height:1.2;margin-bottom:2px}
+.pdf-info .desc{font-size:11px;color:var(--muted)}
 
-    .cat-row td {
-      background: var(--gray-100) !important;
-      font-size: 10px !important;
-      font-weight: 700 !important;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--navy) !important;
-      padding: 0.45rem 1rem !important;
-    }
+/* ── FOOTER ── */
+.site-footer{background:var(--navy);color:rgba(255,255,255,.5);text-align:center;padding:28px 20px;margin-top:48px;font-size:12px}
+.site-footer strong{color:rgba(255,255,255,.8)}
 
-    /* Badge system */
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding: 3px 8px;
-      border-radius: 5px;
-      font-size: 11px;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-    .badge-green { background: var(--green-bg); color: var(--green); }
-    .badge-red { background: var(--red-bg); color: var(--red); }
-    .badge-amber { background: var(--amber-bg); color: var(--amber); }
-    .badge-blue { background: var(--blue-bg); color: var(--blue); }
-    .badge-gray { background: var(--gray-100); color: var(--gray-600); }
-    .badge-gold { background: #fef9ec; color: #92400e; border: 1px solid var(--gold); }
-
-    .best { font-weight: 700; color: var(--green); }
-    .worst { color: var(--red); }
-    .neutral { color: var(--gray-600); }
-
-    /* ── PRICING TABLE ── */
-    .price-table thead th { font-size: 11px; }
-    .price-table tbody td { font-size: 0.8rem; }
-    .price-best { background: #f0fdf4 !important; }
-    .price-worst { background: #fff1f2 !important; }
-    .price-highlight {
-      font-weight: 700;
-      font-size: 0.875rem;
-    }
-
-    /* ── PROFILE CARDS ── */
-    .profile-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-    }
-    @media (max-width: 900px) {
-      .profile-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 480px) {
-      .profile-grid { grid-template-columns: 1fr; }
-    }
-
-    .profile-card {
-      background: var(--white);
-      border: 1px solid var(--gray-200);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: transform .2s, box-shadow .2s;
-    }
-    .profile-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(26,46,74,0.12);
-    }
-    .profile-card-header {
-      background: var(--navy);
-      color: var(--white);
-      padding: 1rem 1.25rem;
-    }
-    .profile-card-header .pc-type {
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--gold);
-      font-weight: 600;
-    }
-    .profile-card-header h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-top: 2px;
-    }
-    .profile-card-header .pc-price {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.7);
-      margin-top: 3px;
-    }
-    .profile-card-body {
-      padding: 1.1rem 1.25rem;
-    }
-
-    /* Radar-style score bars */
-    .score-item {
-      margin-bottom: 0.55rem;
-    }
-    .score-label {
-      display: flex;
-      justify-content: space-between;
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--gray-600);
-      margin-bottom: 3px;
-    }
-    .score-bar {
-      height: 6px;
-      background: var(--gray-100);
-      border-radius: 3px;
-      overflow: hidden;
-    }
-    .score-fill {
-      height: 100%;
-      border-radius: 3px;
-      background: var(--navy);
-      transition: width 0.8s ease;
-    }
-
-    .pros-cons {
-      margin-top: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-    }
-    .pro, .con {
-      font-size: 11.5px;
-      display: flex;
-      align-items: flex-start;
-      gap: 5px;
-      line-height: 1.4;
-    }
-    .pro::before { content: "+"; color: var(--green); font-weight: 700; flex-shrink: 0; }
-    .con::before { content: "−"; color: var(--red); font-weight: 700; flex-shrink: 0; }
-
-    /* ── PDF DOCUMENTS ── */
-    .docs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 0.75rem;
-    }
-    .doc-link {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      background: var(--white);
-      border: 1px solid var(--gray-200);
-      border-radius: 8px;
-      padding: 0.875rem 1rem;
-      text-decoration: none;
-      color: var(--gray-800);
-      transition: border-color .2s, box-shadow .2s;
-    }
-    .doc-link:hover {
-      border-color: var(--gold);
-      box-shadow: 0 2px 8px rgba(201,168,76,0.2);
-    }
-    .doc-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      background: var(--navy);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 16px;
-    }
-    .doc-info .doc-name {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--navy);
-    }
-    .doc-info .doc-type {
-      font-size: 10px;
-      color: var(--gray-400);
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-    }
-
-    /* ── SUMMARY BOX ── */
-    .summary-box {
-      background: var(--navy);
-      color: var(--white);
-      border-radius: 12px;
-      padding: 1.75rem 2rem;
-      margin-bottom: 3rem;
-    }
-    .summary-box h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--gold);
-      margin-bottom: 1rem;
-      letter-spacing: -0.01em;
-    }
-    .summary-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-    }
-    @media (max-width: 640px) {
-      .summary-grid { grid-template-columns: 1fr; }
-    }
-    .summary-item {
-      border-left: 3px solid var(--gold);
-      padding-left: 0.875rem;
-    }
-    .summary-item .si-label {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: rgba(255,255,255,0.5);
-      font-weight: 600;
-      margin-bottom: 3px;
-    }
-    .summary-item .si-value {
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--white);
-    }
-    .summary-item .si-note {
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.55);
-      margin-top: 2px;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--navy);
-      color: rgba(255,255,255,0.45);
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 11px;
-      margin-top: 3rem;
-    }
-    footer strong { color: rgba(255,255,255,0.7); }
-
-    /* ── PRINT ── */
-    @media print {
-      nav { display: none; }
-      header { padding: 1rem; }
-      main { padding: 1rem; }
-      .exit-cards { grid-template-columns: repeat(3, 1fr); }
-      .profile-grid { grid-template-columns: repeat(4, 1fr); }
-    }
-
-    /* ── UTILS ── */
-    .tag-current {
-      display: inline-block;
-      background: #fee2e2;
-      color: var(--red);
-      font-size: 9px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 2px 6px;
-      border-radius: 4px;
-      vertical-align: middle;
-      margin-left: 4px;
-    }
-  </style>
+/* ── UTILS ── */
+.pb-section{padding-bottom:40px}
+.mt-4{margin-top:16px}
+.mt-2{margin-top:8px}
+</style>
 </head>
 <body>
 
-<!-- ╔══════════════════════════════════════╗ -->
-<!--              HEADER                       -->
-<!-- ╚══════════════════════════════════════╝ -->
-<header>
-  <p class="header-eyebrow">Conseil Syndical — Document de travail</p>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="badge-prop">Copropriété AC1087048 · 27 lots</div>
   <h1>Comparatif des offres de syndic</h1>
-  <p>101 Boulevard Poniatowski 75012 Paris &nbsp;·&nbsp; Copropriété AC1087048 &nbsp;·&nbsp; 27 lots (15 principaux)</p>
-  <div class="header-meta">
-    <div class="header-meta-item">
-      <div class="label">Candidats évalués</div>
-      <div class="value">4 offres + syndic sortant</div>
-    </div>
-    <div class="header-meta-item">
-      <div class="label">Contrat en cours</div>
-      <div class="value">Foncia → 30 sept. 2027</div>
-    </div>
-    <div class="header-meta-item">
-      <div class="label">Mise à jour</div>
-      <div class="value">Avril 2026</div>
-    </div>
+  <p class="sub">101 Boulevard Poniatowski — 75012 Paris · Mis à jour le 17 avril 2026</p>
+  <div class="header-stats">
+    <div class="hstat"><span class="val">4</span><span class="lbl">Candidats</span></div>
+    <div class="hstat"><span class="val">−1 522 €</span><span class="lbl">Économie max/an</span></div>
+    <div class="hstat"><span class="val">Sept. 2027</span><span class="lbl">Fin contrat Foncia</span></div>
+    <div class="hstat"><span class="val">15</span><span class="lbl">Lots principaux</span></div>
   </div>
 </header>
 
-<!-- ╔══════════════════════════════════════╗ -->
-<!--              NAVIGATION                   -->
-<!-- ╚══════════════════════════════════════╝ -->
-<nav>
-  <ul>
-    <li><a href="#contexte">Contexte</a></li>
-    <li><a href="#comparatif">Tableau comparatif</a></li>
-    <li><a href="#prix">Comparatif des prix</a></li>
-    <li><a href="#profils">Profils des candidats</a></li>
-    <li><a href="#synthese">Synthèse</a></li>
-    <li><a href="#documents">Documents</a></li>
-  </ul>
+<!-- NAV -->
+<nav class="sticky-nav" aria-label="Navigation">
+  <div class="nav-inner">
+    <a href="#contexte">Contexte</a>
+    <a href="#classement">Classement prix</a>
+    <a href="#offres">Les offres</a>
+    <a href="#analyse">Analyse</a>
+    <a href="#prix-detail">Frais détaillés</a>
+    <a href="#documents">Documents</a>
+  </div>
 </nav>
 
-<!-- ╔══════════════════════════════════════╗ -->
-<!--              MAIN CONTENT                 -->
-<!-- ╚══════════════════════════════════════╝ -->
 <main>
 
-  <!-- ─── 1. CONTEXTE ─── -->
-  <section id="contexte" class="section">
-    <div class="section-header">
-      <div class="section-num">1</div>
-      <h2>Contexte &amp; situation contractuelle</h2>
-    </div>
+<!-- SECTION 1: CONTEXTE -->
+<section id="contexte">
+<div class="container pb-section">
+  <p class="section-label">Situation actuelle</p>
+  <h2 class="section-title">Contexte contractuel</h2>
+  <p class="section-sub">Foncia est le syndic en exercice — éléments clés avant de décider.</p>
 
-    <!-- Foncia status -->
-    <div class="foncia-status">
-      <div class="fs-icon">⚠️</div>
-      <div class="fs-content">
-        <span class="fs-tag">Contrat actif</span>
-        <h3>Foncia Paris Rive Droite — Syndic sortant</h3>
-        <p>Contrat renouvelé lors de l'AG du 19 février 2026. Le quitus a été accordé pour la gestion précédente. La copropriété est liée par ce contrat jusqu'au terme prévu.</p>
+  <div class="alert alert-red">
+    <div class="alert-icon">🔒</div>
+    <div class="alert-body">
+      <h4>Contrat Foncia en cours — échéance 30 septembre 2027</h4>
+      <p>Renouvelé le <strong>19 février 2026</strong> pour <strong>19 mois et 12 jours</strong>. Le quitus a été accordé à l'AG pour la gestion précédente. Tout changement avant l'échéance implique une démarche spécifique.</p>
+    </div>
+  </div>
+
+  <p class="section-label mt-4">Options de sortie</p>
+  <div class="exit-grid">
+    <div class="exit-card red">
+      <div class="exit-dot red">⚖️</div>
+      <h4>Voie contentieuse</h4>
+      <p>Démontrer une faute grave et révoquer le syndic en AG (majorité art. 25). Procédure longue, résultat incertain.</p>
+    </div>
+    <div class="exit-card amber">
+      <div class="exit-dot amber">🤝</div>
+      <h4>Voie négociée</h4>
+      <p>Négocier directement une résiliation anticipée amiable avec Foncia. Dépend de la bonne volonté du syndic.</p>
+    </div>
+    <div class="exit-card green">
+      <div class="exit-dot green">📅</div>
+      <h4>Voie contractuelle</h4>
+      <p>Inscrire le changement à l'OdJ d'une AG dans les <strong>3 mois avant le 30/09/2027</strong>. Sans indemnité — c'est la voie recommandée.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SECTION 2: CLASSEMENT -->
+<section id="classement" style="background:#fff;padding-top:40px">
+<div class="container pb-section">
+  <p class="section-label">Vue d'ensemble</p>
+  <h2 class="section-title">Classement par coût annuel</h2>
+  <p class="section-sub">Forfait TTC annuel — Foncia pris comme référentiel à 4 202 €</p>
+
+  <div class="ranking-wrap">
+    <div class="rank-row">
+      <div class="rank-num r1">1</div>
+      <div class="rank-name">Matera Coop.<small>Syndic coopératif</small></div>
+      <div class="rank-bar-wrap"><div class="rank-bar best" data-pct="52">2 680 €</div></div>
+      <div class="rank-delta save">−1 522 €</div>
+    </div>
+    <div class="rank-row">
+      <div class="rank-num r2">2</div>
+      <div class="rank-name" style="font-weight:700">Foncia<small>Référence actuelle</small></div>
+      <div class="rank-bar-wrap"><div class="rank-bar ref" data-pct="82">4 202 € (actuel)</div></div>
+      <div class="rank-delta same">Réf.</div>
+    </div>
+    <div class="rank-row">
+      <div class="rank-num r3">3</div>
+      <div class="rank-name">UMA RL<small>Syndic local</small></div>
+      <div class="rank-bar-wrap"><div class="rank-bar high" data-pct="87">4 500 €</div></div>
+      <div class="rank-delta more">+298 €</div>
+    </div>
+    <div class="rank-row">
+      <div class="rank-num r4">4</div>
+      <div class="rank-name">Matera Pro<small>Syndic classique</small></div>
+      <div class="rank-bar-wrap"><div class="rank-bar high" data-pct="98">5 040 €</div></div>
+      <div class="rank-delta more">+838 €</div>
+    </div>
+    <div class="rank-row">
+      <div class="rank-num r5">5</div>
+      <div class="rank-name">EM Gestion<small>FNAIM</small></div>
+      <div class="rank-bar-wrap"><div class="rank-bar highest" data-pct="100">5 160 €</div></div>
+      <div class="rank-delta more">+958 €</div>
+    </div>
+  </div>
+
+  <div class="alert alert-amber mt-4">
+    <div class="alert-icon">💡</div>
+    <div class="alert-body">
+      <h4>Le prix seul ne fait pas tout</h4>
+      <p>Matera Coopératif implique une participation active du conseil syndical. UMA RL et EM Gestion incluent plus de services que Foncia pour leur forfait. Consultez l'analyse détaillée ci-dessous.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SECTION 3: LES OFFRES -->
+<section id="offres">
+<div class="container pb-section">
+  <p class="section-label">Comparaison détaillée</p>
+  <h2 class="section-title">Les 4 offres face à Foncia</h2>
+  <p class="section-sub">Cliquez sur "Voir les frais annexes" pour afficher les détails de chaque offre.</p>
+
+  <div class="foncia-ref">
+    <h3>Foncia — Syndic sortant <span>RÉFÉRENCE</span></h3>
+    <div class="foncia-kpi">
+      <div class="fkpi"><div class="v">4 202 €</div><div class="l">Forfait TTC/an</div></div>
+      <div class="fkpi"><div class="v">169 €/h</div><div class="l">Taux horaire TTC</div></div>
+      <div class="fkpi"><div class="v">2 visites</div><div class="l">Par an (2h min)</div></div>
+      <div class="fkpi"><div class="v">2 réunions CS</div><div class="l">Incluses (2h)</div></div>
+      <div class="fkpi"><div class="v">Non incluse</div><div class="l">AG</div></div>
+      <div class="fkpi"><div class="v">19 mois</div><div class="l">Durée du contrat</div></div>
+    </div>
+  </div>
+
+  <div class="cards-grid">
+
+    <!-- Matera Coop -->
+    <div class="card card-matera-coop">
+      <div class="card-head">
+        <div class="card-badge">Syndic coopératif</div>
+        <h3>Matera Coopératif</h3>
+        <div class="price-big">2 680 € <span>TTC/an</span></div>
+        <div class="vs-foncia save-tag">−1 522 € vs Foncia</div>
       </div>
-      <div class="fs-dates">
-        <div class="fs-date-item">
-          <div class="d-label">Début</div>
-          <div class="d-value">19 / 02 / 2026</div>
-        </div>
-        <div class="fs-date-item">
-          <div class="d-label">Fin</div>
-          <div class="d-value">30 / 09 / 2027</div>
-        </div>
-        <div class="fs-date-item">
-          <div class="d-label">Durée</div>
-          <div class="d-value">19 mois 12 j.</div>
-        </div>
-        <div class="fs-date-item">
-          <div class="d-label">Forfait annuel</div>
-          <div class="d-value">4 202,40 € TTC</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Alert -->
-    <div class="alert-box">
-      <p class="alert-title">⚡ Quitus accordé — implications</p>
-      <p>L'approbation des comptes et l'octroi du quitus signifient que la copropriété a validé la gestion passée. Cela complique l'invocation de fautes antérieures comme motif de résiliation, mais ne ferme pas la voie contentieuse pour des manquements postérieurs au 19/02/2026.</p>
-    </div>
-
-    <!-- Exit options -->
-    <p style="font-size:0.8rem; font-weight:600; color:var(--navy); margin-bottom:0.75rem; text-transform:uppercase; letter-spacing:0.06em;">3 voies pour changer de syndic</p>
-    <div class="exit-cards">
-
-      <div class="exit-card red">
-        <div class="ec-badge">🔴 Voie contentieuse</div>
-        <h3>Révocation pour faute grave</h3>
-        <p>Documenter une inexécution grave commise <strong>après</strong> le 19/02/2026. Le conseil syndical notifie Foncia, inscrit la résiliation à l'OdJ d'une AG. Vote à la majorité de l'article 25 (voix de tous les copropriétaires).</p>
-        <p class="ec-note" style="color:var(--red);">⚠ Risque de contestation judiciaire par Foncia — preuve solide requise.</p>
-      </div>
-
-      <div class="exit-card amber">
-        <div class="ec-badge">🟡 Voie négociée</div>
-        <h3>Résiliation amiable anticipée</h3>
-        <p>Prendre contact avec Foncia pour négocier une fin de contrat anticipée, éventuellement sans indemnité ou avec compensation partielle. Dépend de la bonne volonté des deux parties et du contexte commercial.</p>
-        <p class="ec-note" style="color:#92400e;">💬 Solution la plus rapide si Foncia y consent — aucune garantie de succès.</p>
-      </div>
-
-      <div class="exit-card green">
-        <div class="ec-badge">🟢 Voie contractuelle</div>
-        <h3>Attendre le terme &amp; inscrire à l'OdJ</h3>
-        <p>Inscrire le changement de syndic à l'OdJ d'une AG convoquée <strong>dans les 3 mois précédant le 30/09/2027</strong> (soit entre juillet et septembre 2027). La résiliation est alors de plein droit, <strong>sans indemnité</strong>.</p>
-        <p class="ec-note" style="color:#166534;">✅ Voie la plus sûre juridiquement — AG à prévoir entre juillet et septembre 2027.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ─── 2. TABLEAU COMPARATIF POINTS FORTS / FAIBLES ─── -->
-  <section id="comparatif" class="section">
-    <div class="section-header">
-      <div class="section-num">2</div>
-      <h2>Tableau comparatif — Points forts &amp; points faibles</h2>
-    </div>
-
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Critère</th>
-            <th class="col-current">Foncia<span class="syndic-type">Syndic professionnel</span></th>
-            <th>Matera Coopératif<span class="syndic-type">Syndic coopératif</span></th>
-            <th>Matera Pro Local<span class="syndic-type">Syndic professionnel</span></th>
-            <th>EM Gestion<span class="syndic-type">Syndic professionnel</span></th>
-            <th>UMA RL<span class="syndic-type">Syndic professionnel</span></th>
-          </tr>
-        </thead>
-        <tbody>
-
-          <!-- PRIX -->
-          <tr class="cat-row"><td colspan="6">💶 Tarification</td></tr>
-          <tr>
-            <td>Forfait annuel TTC</td>
-            <td><span class="badge badge-amber">4 202 €</span></td>
-            <td><span class="badge badge-green">2 680 €</span> <span style="font-size:9px;color:var(--green);font-weight:700;">MOINS CHER</span></td>
-            <td><span class="badge badge-red">5 040 €</span> <span style="font-size:9px;color:var(--red);font-weight:700;">PLUS CHER</span></td>
-            <td><span class="badge badge-red">5 160 €</span></td>
-            <td><span class="badge badge-amber">4 500 €</span></td>
-          </tr>
-          <tr>
-            <td>Taux horaire TTC (dépassement)</td>
-            <td><span class="badge badge-red">169 €/h</span></td>
-            <td><span class="badge badge-gray">Packs optionnels</span></td>
-            <td><span class="badge badge-amber">150 €/h</span></td>
-            <td><span class="badge badge-amber">150 €/h</span></td>
-            <td><span class="badge badge-green">120 €/h</span> <span style="font-size:9px;color:var(--green);font-weight:700;">PLUS BAS</span></td>
-          </tr>
-          <tr>
-            <td>Révision annuelle du forfait</td>
-            <td><span class="badge badge-amber">Indexation IPC+salaires</span></td>
-            <td><span class="badge badge-green">Max +5 %/an</span></td>
-            <td><span class="badge badge-gray">Non précisée</span></td>
-            <td><span class="badge badge-green">Aucune prévue</span></td>
-            <td><span class="badge badge-amber">+3 % fixe/an</span></td>
-          </tr>
-
-          <!-- SERVICES INCLUS -->
-          <tr class="cat-row"><td colspan="6">📋 Services inclus dans le forfait</td></tr>
-          <tr>
-            <td>Visites annuelles incluses</td>
-            <td><span class="badge badge-amber">2 visites (2h min)</span></td>
-            <td><span class="badge badge-gray">Via plateforme</span></td>
-            <td><span class="badge badge-amber">2 visites</span></td>
-            <td><span class="badge badge-amber">2 visites (1h min)</span></td>
-            <td><span class="badge badge-green">3 visites</span></td>
-          </tr>
-          <tr>
-            <td>Réunions conseil syndical incluses</td>
-            <td><span class="badge badge-amber">2 réunions (2h)</span></td>
-            <td><span class="badge badge-gray">Illimitées (plateforme)</span></td>
-            <td><span class="badge badge-green">4 réunions</span></td>
-            <td><span class="badge badge-amber">2 réunions (1h)</span></td>
-            <td><span class="badge badge-green">3 réunions</span></td>
-          </tr>
-          <tr>
-            <td>Assemblée générale annuelle incluse</td>
-            <td><span class="badge badge-green">✓ 2h incluses</span></td>
-            <td><span class="badge badge-amber">Pack optionnel (450-800 €)</span></td>
-            <td><span class="badge badge-green">✓ 3h incluses</span></td>
-            <td><span class="badge badge-green">✓ 2h incluses</span></td>
-            <td><span class="badge badge-green">✓ Incluse</span></td>
-          </tr>
-          <tr>
-            <td>Frais de mutation / état daté</td>
-            <td><span class="badge badge-red">380 € TTC</span></td>
-            <td><span class="badge badge-green">Gratuit ✓</span></td>
-            <td><span class="badge badge-green">Gratuit ✓</span></td>
-            <td><span class="badge badge-amber">380 € TTC</span></td>
-            <td><span class="badge badge-green">300 € TTC</span></td>
-          </tr>
-          <tr>
-            <td>Suivi de travaux</td>
-            <td><span class="badge badge-red">3–5 % du montant HT</span></td>
-            <td><span class="badge badge-green">Gratuit ✓</span></td>
-            <td><span class="badge badge-green">Gratuit ✓</span></td>
-            <td><span class="badge badge-amber">Taux horaire</span></td>
-            <td><span class="badge badge-amber">Taux horaire</span></td>
-          </tr>
-          <tr>
-            <td>Assurance RC conseil syndical</td>
-            <td><span class="badge badge-red">Non incluse</span></td>
-            <td><span class="badge badge-green">AXA 9 M€ incluse ✓</span></td>
-            <td><span class="badge badge-gray">Non précisée</span></td>
-            <td><span class="badge badge-red">Non incluse</span></td>
-            <td><span class="badge badge-red">Non incluse</span></td>
-          </tr>
-          <tr>
-            <td>Frais bancaires (compte séparé)</td>
-            <td><span class="badge badge-red">Non inclus</span></td>
-            <td><span class="badge badge-green">Inclus ✓</span></td>
-            <td><span class="badge badge-gray">Non précisés</span></td>
-            <td><span class="badge badge-red">Non inclus</span></td>
-            <td><span class="badge badge-red">Non inclus</span></td>
-          </tr>
-
-          <!-- TECHNOLOGIE -->
-          <tr class="cat-row"><td colspan="6">💻 Technologie &amp; transparence</td></tr>
-          <tr>
-            <td>Plateforme digitale copropriétaires</td>
-            <td><span class="badge badge-amber">Accès en ligne standard</span></td>
-            <td><span class="badge badge-green">Plateforme complète + app ✓</span></td>
-            <td><span class="badge badge-green">Plateforme complète + app ✓</span></td>
-            <td><span class="badge badge-amber">Accès en ligne standard</span></td>
-            <td><span class="badge badge-amber">Non précisé</span></td>
-          </tr>
-          <tr>
-            <td>Application mobile</td>
-            <td><span class="badge badge-red">Non mentionnée</span></td>
-            <td><span class="badge badge-green">iOS &amp; Android ✓</span></td>
-            <td><span class="badge badge-green">iOS &amp; Android ✓</span></td>
-            <td><span class="badge badge-red">Non mentionnée</span></td>
-            <td><span class="badge badge-red">Non mentionnée</span></td>
-          </tr>
-          <tr>
-            <td>AG en visioconférence</td>
-            <td><span class="badge badge-red">Non proposé</span></td>
-            <td><span class="badge badge-green">Zoom intégré ✓</span></td>
-            <td><span class="badge badge-green">Zoom intégré ✓</span></td>
-            <td><span class="badge badge-red">Non proposé</span></td>
-            <td><span class="badge badge-red">Non proposé</span></td>
-          </tr>
-          <tr>
-            <td>Annuaire fournisseurs</td>
-            <td><span class="badge badge-gray">Réseau interne</span></td>
-            <td><span class="badge badge-green">3 000+ prestataires ✓</span></td>
-            <td><span class="badge badge-green">3 000+ prestataires ✓</span></td>
-            <td><span class="badge badge-gray">Non précisé</span></td>
-            <td><span class="badge badge-gray">Non précisé</span></td>
-          </tr>
-
-          <!-- RÉACTIVITÉ -->
-          <tr class="cat-row"><td colspan="6">⏱ Réactivité &amp; disponibilité</td></tr>
-          <tr>
-            <td>Horaires disponibilité</td>
-            <td><span class="badge badge-amber">Lun-Ven 9h-18h/17h</span></td>
-            <td><span class="badge badge-amber">9h-19h (email &lt;6h)</span></td>
-            <td><span class="badge badge-amber">9h-19h (email &lt;6h)</span></td>
-            <td><span class="badge badge-amber">Lun-Ven 9h-18h/17h</span></td>
-            <td><span class="badge badge-green">9h-19h sans coupure ✓</span></td>
-          </tr>
-          <tr>
-            <td>Garantie de réponse</td>
-            <td><span class="badge badge-red">Non mentionnée</span></td>
-            <td><span class="badge badge-amber">Email &lt; 6h (jours ouvrés)</span></td>
-            <td><span class="badge badge-amber">Email &lt; 6h (jours ouvrés)</span></td>
-            <td><span class="badge badge-red">Non mentionnée</span></td>
-            <td><span class="badge badge-green">Réponse &lt; 24h ✓</span></td>
-          </tr>
-          <tr>
-            <td>Interlocuteur dédié</td>
-            <td><span class="badge badge-amber">Gestionnaire assigné</span></td>
-            <td><span class="badge badge-green">Account manager dédié ✓</span></td>
-            <td><span class="badge badge-green">Account manager dédié ✓</span></td>
-            <td><span class="badge badge-amber">Contact agence</span></td>
-            <td><span class="badge badge-green">Romain Laforet ✓</span></td>
-          </tr>
-
-          <!-- CONTRAT -->
-          <tr class="cat-row"><td colspan="6">📄 Conditions contractuelles</td></tr>
-          <tr>
-            <td>Durée du contrat proposé</td>
-            <td><span class="badge badge-red">19 mois (imposé)</span></td>
-            <td><span class="badge badge-green">12 mois renouvelables ✓</span></td>
-            <td><span class="badge badge-amber">18 mois</span></td>
-            <td><span class="badge badge-amber">18 mois</span></td>
-            <td><span class="badge badge-green">12 mois ✓</span></td>
-          </tr>
-          <tr>
-            <td>Préavis résiliation</td>
-            <td><span class="badge badge-red">Faute grave seulement</span></td>
-            <td><span class="badge badge-green">30 jours avant échéance ✓</span></td>
-            <td><span class="badge badge-amber">30 jours avant échéance</span></td>
-            <td><span class="badge badge-amber">Faute grave / terme</span></td>
-            <td><span class="badge badge-green">30 jours avant échéance ✓</span></td>
-          </tr>
-
-          <!-- GARANTIES -->
-          <tr class="cat-row"><td colspan="6">🏛 Garanties professionnelles &amp; expérience</td></tr>
-          <tr>
-            <td>Carte professionnelle</td>
-            <td><span class="badge badge-green">CPI Paris — active ✓</span></td>
-            <td><span class="badge badge-green">Carte Syndic — active ✓</span></td>
-            <td><span class="badge badge-green">Carte Syndic — active ✓</span></td>
-            <td><span class="badge badge-green">CPI Paris 19/01/2026 ✓</span></td>
-            <td><span class="badge badge-green">Carte Syndic — active ✓</span></td>
-          </tr>
-          <tr>
-            <td>Appartenance réseau / label</td>
-            <td><span class="badge badge-green">Groupe Foncia (national)</span></td>
-            <td><span class="badge badge-blue">PropTech — 12 000 copros</span></td>
-            <td><span class="badge badge-blue">PropTech — 12 000 copros</span></td>
-            <td><span class="badge badge-gold">Membre FNAIM ✓</span></td>
-            <td><span class="badge badge-gray">Cabinet indépendant</span></td>
-          </tr>
-          <tr>
-            <td>Ancienneté / stabilité</td>
-            <td><span class="badge badge-green">Acteur historique national</span></td>
-            <td><span class="badge badge-amber">Fondée 2017 (jeune)</span></td>
-            <td><span class="badge badge-amber">Fondée 2017 (jeune)</span></td>
-            <td><span class="badge badge-amber">Récente (carte 2026)</span></td>
-            <td><span class="badge badge-amber">Structure à dimension humaine</span></td>
-          </tr>
-
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- ─── 3. COMPARATIF PRIX ─── -->
-  <section id="prix" class="section">
-    <div class="section-header">
-      <div class="section-num">3</div>
-      <h2>Comparatif détaillé des prix</h2>
-    </div>
-
-    <div class="table-wrap">
-      <table class="price-table">
-        <thead>
-          <tr>
-            <th style="text-align:left;">Poste tarifaire</th>
-            <th class="col-current">Foncia<br><span class="syndic-type">(actuel)</span></th>
-            <th>Matera<br><span class="syndic-type">Coopératif</span></th>
-            <th>Matera<br><span class="syndic-type">Pro Local</span></th>
-            <th>EM Gestion<br><span class="syndic-type">FNAIM</span></th>
-            <th>UMA RL</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="text-align:left;font-weight:700;">Forfait annuel HT</td>
-            <td>3 502 €</td>
-            <td class="price-best">2 680 € *</td>
-            <td class="price-worst">4 200 €</td>
-            <td class="price-worst">4 300 €</td>
-            <td>3 750 €</td>
-          </tr>
-          <tr>
-            <td style="text-align:left;font-weight:700;color:var(--navy);">Forfait annuel TTC</td>
-            <td class="price-highlight">4 202,40 €</td>
-            <td class="price-best price-highlight" style="color:var(--green);">2 680 € *</td>
-            <td class="price-worst price-highlight" style="color:var(--red);">5 040 €</td>
-            <td class="price-worst price-highlight" style="color:var(--red);">5 160 €</td>
-            <td class="price-highlight">4 500 €</td>
-          </tr>
-          <tr>
-            <td style="text-align:left;font-weight:600;">Mensualité TTC (équiv.)</td>
-            <td>350 €/mois</td>
-            <td class="price-best">223 €/mois</td>
-            <td class="price-worst">420 €/mois</td>
-            <td class="price-worst">430 €/mois</td>
-            <td>375 €/mois</td>
-          </tr>
-          <tr style="background:var(--gray-100);">
-            <td colspan="6" style="text-align:left;font-weight:700;font-size:11px;color:var(--navy);padding:0.5rem 1rem;">Coûts unitaires (prestations particulières)</td>
-          </tr>
-          <tr>
-            <td style="text-align:left;">Taux horaire TTC (dépassements)</td>
-            <td style="color:var(--red);font-weight:600;">169 €/h</td>
-            <td>Packs fixes</td>
-            <td>150 €/h</td>
-            <td>150 €/h</td>
-            <td class="price-best" style="color:var(--green);font-weight:600;">120 €/h</td>
-          </tr>
-          <tr>
-            <td style="text-align:left;">Mise en demeure (recouvrement)</td>
-            <td>65 € TTC</td>
-            <td>—</td>
-            <td>60 € TTC</td>
-            <td class="price-best">42 € TTC</td>
-            <td>54 € TTC</td>
-          </tr>
-          <tr>
-            <td style="text-align:left;">Relance après mise en demeure</td>
-            <td>55 € TTC</td>
-            <td>—</td>
-            <td>60 € TTC</td>
-            <td class="price-best">30 € TTC</td>
-            <td>54 € TTC</td>
-          </tr>
-          <tr>
-            <td style="text-align:left;">État daté (mutation)</td>
-            <td>380 € TTC</td>
-            <td class="price-best">Gratuit ✓</td>
-            <td class="price-best">Gratuit ✓</td>
-            <td>380 € TTC</td>
-            <td>300 € TTC</td>
-          </tr>
-          <tr>
-            <td style="text-align:left;">Opposition sur mutation</td>
-            <td style="color:var(--red);font-weight:600;">350 € TTC</td>
-            <td class="price-best">Gratuit ✓</td>
-            <td class="price-best">Gratuit ✓</td>
-            <td>150 € TTC</td>
-            <td>120 € TTC</td>
-          </tr>
-          <tr>
-            <td style="text-align:left;">AG à la demande d'un copropriétaire</td>
-            <td>600 € TTC</td>
-            <td>Pack sérenité<br>450–800 € TTC</td>
-            <td>400 € TTC</td>
-            <td style="color:var(--red);font-weight:600;">720 € TTC</td>
-            <td>Taux horaire</td>
-          </tr>
-          <tr>
-            <td style="text-align:left;">Suivi de travaux</td>
-            <td style="color:var(--red);font-weight:600;">3–5 % HT travaux</td>
-            <td class="price-best">Gratuit ✓</td>
-            <td class="price-best">Gratuit ✓</td>
-            <td>Taux horaire</td>
-            <td>Taux horaire</td>
-          </tr>
-          <tr style="background:var(--gray-100);">
-            <td colspan="6" style="text-align:left;font-weight:700;font-size:11px;color:var(--navy);padding:0.5rem 1rem;">Révision contractuelle</td>
-          </tr>
-          <tr>
-            <td style="text-align:left;">Clause de révision annuelle</td>
-            <td>Indexation IPC + salaires</td>
-            <td>Max +5 %</td>
-            <td>Non précisée</td>
-            <td class="price-best" style="color:var(--green);font-weight:600;">Aucune prévue</td>
-            <td>+3 % fixe</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p style="font-size:11px;color:var(--gray-400);margin-top:0.5rem;">* Matera Coopératif affiche un tarif unique HT=TTC — modèle coopératif, TVA à vérifier. — Montant légal maximum de l'état daté : 380 € TTC.</p>
-  </section>
-
-  <!-- ─── 4. PROFILS DES CANDIDATS ─── -->
-  <section id="profils" class="section">
-    <div class="section-header">
-      <div class="section-num">4</div>
-      <h2>Profils des candidats</h2>
-    </div>
-
-    <div class="profile-grid">
-
-      <!-- MATERA COOPÉRATIF -->
-      <div class="profile-card">
-        <div class="profile-card-header">
-          <div class="pc-type">Syndic coopératif</div>
-          <h3>Matera Coopératif</h3>
-          <div class="pc-price">2 680 € TTC / an</div>
-        </div>
-        <div class="profile-card-body">
-          <div class="score-item">
-            <div class="score-label"><span>Prix</span><span>5/5</span></div>
-            <div class="score-bar"><div class="score-fill" style="width:100%;background:#16a34a;"></div></div>
-          </div>
-          <div class="score-item">
-            <div class="score-label"><span>Services inclus</span><span>5/5</span></div>
-            <div class="score-bar"><div class="score-fill" style="width:100%;background:#16a34a;"></div></div>
-          </div>
-          <div class="score-item">
-            <div class="score-label"><span>Technologie</span><span>5/5</span></div>
-            <div class="score-bar"><div class="score-fill" style="width:100%;background:#16a34a;"></div></div>
-          </div>
-          <div class="score-item">
-            <div class="score-label"><span>Réactivité</span><span>3/5</span></div>
-            <div class="score-bar"><div class="score-fill" style="width:60%;background:#d97706;"></div></div>
-          </div>
-          <div class="score-item">
-            <div class="score-label"><span>Expérience</span><span>3/5</span></div>
-            <div class="score-bar"><div class="score-fill" style="width:60%;background:#d97706;"></div></div>
-          </div>
-          <div class="pros-cons">
-            <div class="pro">Forfait le moins cher (2 680 €)</div>
-            <div class="pro">Mutations et travaux gratuits</div>
-            <div class="pro">Assurance RC CS AXA incluse</div>
-            <div class="pro">App mobile + Zoom AG + 3 000 fournisseurs</div>
-            <div class="pro">Résiliation simple (30 jours)</div>
-            <div class="con">Modèle coopératif : implication active requise du CS</div>
-            <div class="con">AG non incluse (pack 450-800 €)</div>
-            <div class="con">Entreprise jeune (2017)</div>
-          </div>
+      <div class="card-body">
+        <ul class="kv-list">
+          <li class="kv-row"><span class="kv-label">Taux horaire</span><span class="kv-value"><span class="tag amber">Packs optionnels</span></span></li>
+          <li class="kv-row"><span class="kv-label">Visites</span><span class="kv-value"><span class="tag amber">Sur demande</span></span></li>
+          <li class="kv-row"><span class="kv-label">AG incluse</span><span class="kv-value"><span class="tag amber">Option 450–800 €</span></span></li>
+          <li class="kv-row"><span class="kv-label">Mutations</span><span class="kv-value"><span class="tag green">GRATUITES</span></span></li>
+          <li class="kv-row"><span class="kv-label">Suivi travaux</span><span class="kv-value"><span class="tag green">GRATUIT</span></span></li>
+          <li class="kv-row"><span class="kv-label">Appli mobile</span><span class="kv-value"><span class="tag green">iOS + Android</span></span></li>
+          <li class="kv-row"><span class="kv-label">Résiliation</span><span class="kv-value"><span class="tag green">30 jours</span></span></li>
+        </ul>
+        <div class="divider"></div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <span class="tag green">✓ Prix imbattable</span>
+          <span class="tag green">✓ Très flexible</span>
+          <span class="tag red">✗ Modèle participatif</span>
         </div>
       </div>
-
-      <!-- MATERA PRO LOCAL -->
-      <div class="profile-card">
-        <div class="profile-card-header">
-          <div class="pc-type">Syndic professionnel</div>
-          <h3>Matera Pro Local</h3>
-          <div class="pc-price">5 040 € TTC / an</div>
-        </div>
-        <div class="profile-card-body">
-          <div class="score-item">
-            <div class="score-label"><span>Prix</span><span>1/5</span></div>
-            <div class="score-bar"><div class="score-fill" style="width:20%;background:#dc2626;"></div></div>
-          </div>
-          <div class="score-item">
-            <div class="score-label"><span>Services inclus</span><span>4/5</span></div>
-            <div class="score-bar"><div class="score-fill" style="width:80%;background:#16a34a;"></div></div>
-          </div>
-          <div class="score-item">
-            <div class="score-label"><span>Technologie</span><span>5/5</span></div>
-            <div class="score-bar"><div class="score-fill" style="width:100%;background:#16a34a;"></div></div>
-          </div>
-          <div class="score-item">
-            <div class="score-label"><span>Réactivité</span><span>3/5</span></div>
-            <div class="score-bar"><div class="score-fill" style="width:60%;background:#d97706;"></div></div>
-          </div>
-          <div class="score-item">
-            <div class="score-label"><span>Expérience</span><span>3/5</span></div>
-            <div class="score-bar"><div class="score-fill" style="width:60%;background:#d97706;"></div></div>
-          </div>
-          <div class="pros-cons">
-            <div class="pro">4 réunions CS incluses (le plus)</div>
-            <div class="pro">AG incluse 3h</div>
-            <div class="pro">Mutations et travaux gratuits</div>
-            <div class="pro">Même plateforme digitale que le Coopératif</div>
-            <div class="con">Le plus cher de tous (5 040 € TTC)</div>
-            <div class="con">56 % plus cher que Matera Coopératif pour services comparables</div>
-            <div class="con">Entreprise jeune (2017)</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- EM GESTION -->
-      <div class="profile-card">
-        <div class="profile-card-header">
-          <div class="pc-type">Syndic professionnel · FNAIM</div>
-          <h3>EM Gestion</h3>
-          <div class="pc-price">5 160 € TTC / an</div>
-        </div>
-        <div class="profile-card-body">
-          <div class="score-item">
-            <div class="score-label"><span>Prix</span><span>1/5</span></div>
-            <div class="score-bar"><div class="score-fill" style="width:20%;background:#dc2626;"></div></div>
-          </div>
-          <div class="score-item">
-            <div class="score-label"><span>Services inclus</span><span>3/5</span></div>
-            <div class="score-bar"><div class="score-fill" style="width:60%;background:#d97706;"></div></div>
-          </div>
-          <div class="score-item">
-            <div class="score-label"><span>Technologie</span><span>2/5</span></div>
-            <div class="score-bar"><div class="score-fill" style="width:40%;background:#dc2626;"></div></div>
-          </div>
-          <div class="score-item">
-            <div class="score-label"><span>Réactivité</span><span>3/5</span></div>
-            <div class="score-bar"><div class="score-fill" style="width:60%;background:#d97706;"></div></div>
-          </div>
-          <div class="score-item">
-            <div class="score-label"><span>Expérience</span><span>4/5</span></div>
-            <div class="score-bar"><div class="score-fill" style="width:80%;background:#16a34a;"></div></div>
-          </div>
-          <div class="pros-cons">
-            <div class="pro">Membre FNAIM — garantie déontologique</div>
-            <div class="pro">Aucune révision de prix prévue (stabilité)</div>
-            <div class="pro">Frais de recouvrement les plus bas (42 € / 30 €)</div>
-            <div class="pro">Opposition mutation compétitive (150 €)</div>
-            <div class="con">Forfait le plus élevé (5 160 € TTC)</div>
-            <div class="con">Carte pro délivrée en janvier 2026 (structure récente)</div>
-            <div class="con">Visites courtes (1h min vs 2h Foncia)</div>
-            <div class="con">Pas de plateforme digitale avancée</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- UMA RL -->
-      <div class="profile-card">
-        <div class="profile-card-header">
-          <div class="pc-type">Syndic professionnel</div>
-          <h3>UMA RL</h3>
-          <div class="pc-price">4 500 € TTC / an</div>
-        </div>
-        <div class="profile-card-body">
-          <div class="score-item">
-            <div class="score-label"><span>Prix</span><span>3/5</span></div>
-            <div class="score-bar"><div class="score-fill" style="width:60%;background:#d97706;"></div></div>
-          </div>
-          <div class="score-item">
-            <div class="score-label"><span>Services inclus</span><span>4/5</span></div>
-            <div class="score-bar"><div class="score-fill" style="width:80%;background:#16a34a;"></div></div>
-          </div>
-          <div class="score-item">
-            <div class="score-label"><span>Technologie</span><span>2/5</span></div>
-            <div class="score-bar"><div class="score-fill" style="width:40%;background:#dc2626;"></div></div>
-          </div>
-          <div class="score-item">
-            <div class="score-label"><span>Réactivité</span><span>5/5</span></div>
-            <div class="score-bar"><div class="score-fill" style="width:100%;background:#16a34a;"></div></div>
-          </div>
-          <div class="score-item">
-            <div class="score-label"><span>Expérience</span><span>3/5</span></div>
-            <div class="score-bar"><div class="score-fill" style="width:60%;background:#d97706;"></div></div>
-          </div>
-          <div class="pros-cons">
-            <div class="pro">AG annuelle incluse dans le forfait</div>
-            <div class="pro">3 visites/an et 3 réunions CS incluses</div>
-            <div class="pro">Taux horaire le plus bas (120 €/h TTC)</div>
-            <div class="pro">État daté le moins cher (300 € TTC)</div>
-            <div class="pro">Garantie de réponse &lt; 24h — contact Romain Laforet</div>
-            <div class="con">Révision +3 % fixe par an</div>
-            <div class="con">Pas de plateforme digitale avancée mentionnée</div>
-            <div class="con">Structure de taille limitée</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ─── 5. SYNTHÈSE ─── -->
-  <section id="synthese" class="section">
-    <div class="section-header">
-      <div class="section-num">5</div>
-      <h2>Synthèse &amp; recommandations</h2>
-    </div>
-
-    <div class="summary-box">
-      <h3>Points de décision clés pour le conseil syndical</h3>
-      <div class="summary-grid">
-        <div class="summary-item">
-          <div class="si-label">Meilleur rapport qualité/prix</div>
-          <div class="si-value">Matera Coopératif</div>
-          <div class="si-note">2 680 € TTC/an — mutations, travaux et assurance RC inclus. Exige l'implication du CS dans la gestion quotidienne.</div>
-        </div>
-        <div class="summary-item">
-          <div class="si-label">Meilleur service professionnel clé-en-main</div>
-          <div class="si-value">UMA RL</div>
-          <div class="si-note">4 500 € TTC/an — AG et 3 visites incluses, taux horaire le plus bas, garantie 24h, contact dédié identifié.</div>
-        </div>
-        <div class="summary-item">
-          <div class="si-label">Meilleure garantie institutionnelle</div>
-          <div class="si-value">EM Gestion (FNAIM)</div>
-          <div class="si-note">Membre FNAIM, prix bloqué, frais de recouvrement les plus bas. Mais forfait le plus élevé (5 160 € TTC).</div>
-        </div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)">
+        Voir les frais annexes &amp; détails
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <div class="accordion-panel">
+        <table class="fee-table">
+          <tr><td>Augmentation annuelle max.</td><td>+5 %</td></tr>
+          <tr><td>Pack travaux</td><td>500 €</td></tr>
+          <tr><td>Pack recouvrement</td><td>300 €</td></tr>
+          <tr><td>Pack dégâts des eaux</td><td>400 €</td></tr>
+          <tr><td>Assurance RC CS (AXA)</td><td>Incluse</td></tr>
+          <tr><td>Frais bancaires</td><td>Inclus (~120 €)</td></tr>
+          <tr><td>Forum communauté</td><td>100 000 membres</td></tr>
+          <tr><td>Annuaire fournisseurs</td><td>3 000 partenaires</td></tr>
+        </table>
+        <p style="margin-top:10px;font-style:italic;color:#b45309">⚠️ Modèle coopératif : le conseil syndical doit s'impliquer davantage dans la gestion quotidienne.</p>
       </div>
     </div>
 
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th style="text-align:left;">Profil de la copropriété</th>
-            <th>Candidat recommandé</th>
-            <th>Motif principal</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="text-align:left;">CS actif, cherche à réduire les coûts &amp; moderniser</td>
-            <td><strong>Matera Coopératif</strong></td>
-            <td>-37 % vs Foncia, outils digitaux, mutations gratuites</td>
-          </tr>
-          <tr>
-            <td style="text-align:left;">CS moins disponible, veut un service complet géré par le syndic</td>
-            <td><strong>UMA RL</strong></td>
-            <td>AG+visites+CS inclus, réactivité max, taux horaire bas</td>
-          </tr>
-          <tr>
-            <td style="text-align:left;">CS priorité sur les garanties institutionnelles &amp; stabilité tarifaire</td>
-            <td><strong>EM Gestion</strong></td>
-            <td>FNAIM, prix fixe, frais recouvrement bas</td>
-          </tr>
-          <tr>
-            <td style="text-align:left;">CS souhaite une transition douce avec outils modernes</td>
-            <td><strong>Matera Pro Local</strong></td>
-            <td>Mode professionnel + plateforme Matera, 4 CS incluses</td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- Matera Pro -->
+    <div class="card card-matera-pro">
+      <div class="card-head">
+        <div class="card-badge">Syndic classique</div>
+        <h3>Matera Pro Local</h3>
+        <div class="price-big">5 040 € <span>TTC/an</span></div>
+        <div class="vs-foncia more-tag">+838 € vs Foncia</div>
+      </div>
+      <div class="card-body">
+        <ul class="kv-list">
+          <li class="kv-row"><span class="kv-label">Taux horaire</span><span class="kv-value">150 € TTC/h</span></li>
+          <li class="kv-row"><span class="kv-label">Visites</span><span class="kv-value">2/an</span></li>
+          <li class="kv-row"><span class="kv-label">Réunions CS</span><span class="kv-value"><span class="tag green">4 incluses</span></span></li>
+          <li class="kv-row"><span class="kv-label">AG incluse</span><span class="kv-value"><span class="tag green">Oui (3h)</span></span></li>
+          <li class="kv-row"><span class="kv-label">Mutations</span><span class="kv-value"><span class="tag green">GRATUITES</span></span></li>
+          <li class="kv-row"><span class="kv-label">Suivi travaux</span><span class="kv-value"><span class="tag green">GRATUIT</span></span></li>
+          <li class="kv-row"><span class="kv-label">Appli mobile</span><span class="kv-value"><span class="tag green">iOS + Android</span></span></li>
+          <li class="kv-row"><span class="kv-label">Durée contrat</span><span class="kv-value">18 mois</span></li>
+        </ul>
+        <div class="divider"></div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <span class="tag green">✓ Services très complets</span>
+          <span class="tag green">✓ AG incluse</span>
+          <span class="tag red">✗ Le plus cher</span>
+        </div>
+      </div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)">
+        Voir les frais annexes &amp; détails
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <div class="accordion-panel">
+        <table class="fee-table">
+          <tr><td>Taux horaire HT</td><td>125 € HT</td></tr>
+          <tr><td>Gestionnaire dédié local</td><td>Oui</td></tr>
+          <tr><td>Durée contrat</td><td>18 mois</td></tr>
+          <tr><td>Forum communauté</td><td>100 000 membres</td></tr>
+          <tr><td>Annuaire fournisseurs</td><td>3 000 partenaires</td></tr>
+          <tr><td>AG Zoom incluse</td><td>Oui</td></tr>
+        </table>
+        <p style="margin-top:10px;font-style:italic">Service similaire à Matera Coopératif mais avec un gestionnaire professionnel dédié. Prix nettement supérieur.</p>
+      </div>
     </div>
-  </section>
 
-  <!-- ─── 6. DOCUMENTS ─── -->
-  <section id="documents" class="section">
-    <div class="section-header">
-      <div class="section-num">6</div>
-      <h2>Accès aux documents officiels</h2>
+    <!-- EM Gestion -->
+    <div class="card card-em">
+      <div class="card-head">
+        <div class="card-badge">FNAIM · Syndic classique</div>
+        <h3>EM Gestion</h3>
+        <div class="price-big">5 160 € <span>TTC/an</span></div>
+        <div class="vs-foncia more-tag">+958 € vs Foncia</div>
+      </div>
+      <div class="card-body">
+        <ul class="kv-list">
+          <li class="kv-row"><span class="kv-label">Taux horaire</span><span class="kv-value">150 € TTC/h</span></li>
+          <li class="kv-row"><span class="kv-label">Visites</span><span class="kv-value">2/an (1h min)</span></li>
+          <li class="kv-row"><span class="kv-label">Réunions CS</span><span class="kv-value">2 incluses</span></li>
+          <li class="kv-row"><span class="kv-label">AG incluse</span><span class="kv-value"><span class="tag red">Non — 720 €</span></span></li>
+          <li class="kv-row"><span class="kv-label">Mutations</span><span class="kv-value">150 € TTC</span></li>
+          <li class="kv-row"><span class="kv-label">Révision prix</span><span class="kv-value"><span class="tag green">Aucune</span></span></li>
+          <li class="kv-row"><span class="kv-label">Garantie FNAIM</span><span class="kv-value"><span class="tag blue">Oui</span></span></li>
+          <li class="kv-row"><span class="kv-label">Durée contrat</span><span class="kv-value">18 mois</span></li>
+        </ul>
+        <div class="divider"></div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <span class="tag green">✓ Prix stable (0 indexation)</span>
+          <span class="tag green">✓ Frais courants les + bas</span>
+          <span class="tag red">✗ Forfait le plus élevé</span>
+        </div>
+      </div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)">
+        Voir les frais annexes &amp; détails
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <div class="accordion-panel">
+        <table class="fee-table">
+          <tr><td>Mise en demeure</td><td>42 € TTC ✓</td></tr>
+          <tr><td>Relance amiable</td><td>30 € TTC ✓</td></tr>
+          <tr><td>État daté</td><td>380 € TTC</td></tr>
+          <tr><td>Opposition mutation</td><td>150 € TTC</td></tr>
+          <tr><td>AG copropriétaire</td><td>720 € TTC</td></tr>
+          <tr><td>Carte pro FNAIM</td><td>délivrée le 19/01/2026</td></tr>
+        </table>
+        <p style="margin-top:10px;font-style:italic">EM Gestion est le seul candidat sans révision annuelle des prix — avantage notable sur la durée du contrat.</p>
+      </div>
     </div>
 
-    <div class="docs-grid">
-
-      <a href="assets/pdfs/foncia-contrat-signe.pdf" target="_blank" class="doc-link">
-        <div class="doc-icon">📄</div>
-        <div class="doc-info">
-          <div class="doc-name">Foncia — Contrat signé</div>
-          <div class="doc-type">Contrat en cours · PDF</div>
+    <!-- UMA RL -->
+    <div class="card card-uma">
+      <div class="card-head">
+        <div class="card-badge">Syndic local · Indépendant</div>
+        <h3>UMA RL</h3>
+        <div class="price-big">4 500 € <span>TTC/an</span></div>
+        <div class="vs-foncia more-tag">+298 € vs Foncia</div>
+      </div>
+      <div class="card-body">
+        <ul class="kv-list">
+          <li class="kv-row"><span class="kv-label">Taux horaire</span><span class="kv-value"><span class="tag green">120 € TTC/h ✓</span></span></li>
+          <li class="kv-row"><span class="kv-label">Visites</span><span class="kv-value"><span class="tag green">3/an</span></span></li>
+          <li class="kv-row"><span class="kv-label">Réunions CS</span><span class="kv-value"><span class="tag green">3 incluses</span></span></li>
+          <li class="kv-row"><span class="kv-label">AG incluse</span><span class="kv-value"><span class="tag green">Oui</span></span></li>
+          <li class="kv-row"><span class="kv-label">Disponibilité</span><span class="kv-value"><span class="tag green">9h–19h non-stop</span></span></li>
+          <li class="kv-row"><span class="kv-label">Réactivité</span><span class="kv-value"><span class="tag green">Réponse 24h garantie</span></span></li>
+          <li class="kv-row"><span class="kv-label">État daté</span><span class="kv-value"><span class="tag green">300 € ✓ le – cher</span></span></li>
+          <li class="kv-row"><span class="kv-label">Contact dédié</span><span class="kv-value">Romain Laforet</span></li>
+        </ul>
+        <div class="divider"></div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <span class="tag green">✓ Meilleur service inclus</span>
+          <span class="tag green">✓ Taux horaire le + bas</span>
+          <span class="tag amber">⚡ +298 € vs Foncia</span>
         </div>
-      </a>
-
-      <a href="assets/pdfs/matera-cooperatif.pdf" target="_blank" class="doc-link">
-        <div class="doc-icon">📋</div>
-        <div class="doc-info">
-          <div class="doc-name">Matera Coopératif</div>
-          <div class="doc-type">Proposition de contrat · PDF</div>
-        </div>
-      </a>
-
-      <a href="assets/pdfs/matera-pro-local.pdf" target="_blank" class="doc-link">
-        <div class="doc-icon">📋</div>
-        <div class="doc-info">
-          <div class="doc-name">Matera Pro Local</div>
-          <div class="doc-type">Proposition de contrat · PDF</div>
-        </div>
-      </a>
-
-      <a href="assets/pdfs/em-gestion-contrat.pdf" target="_blank" class="doc-link">
-        <div class="doc-icon">📋</div>
-        <div class="doc-info">
-          <div class="doc-name">EM Gestion — Projet de contrat</div>
-          <div class="doc-type">Projet de contrat · PDF</div>
-        </div>
-      </a>
-
-      <a href="assets/pdfs/em-gestion-fiche-info.pdf" target="_blank" class="doc-link">
-        <div class="doc-icon">ℹ️</div>
-        <div class="doc-info">
-          <div class="doc-name">EM Gestion — Fiche d'information</div>
-          <div class="doc-type">Fiche réglementaire · PDF</div>
-        </div>
-      </a>
-
-      <a href="assets/pdfs/uma-rl-proposition.pdf" target="_blank" class="doc-link">
-        <div class="doc-icon">📋</div>
-        <div class="doc-info">
-          <div class="doc-name">UMA RL — Proposition</div>
-          <div class="doc-type">Proposition commerciale · PDF</div>
-        </div>
-      </a>
-
-      <a href="assets/pdfs/uma-syndic-rl.pdf" target="_blank" class="doc-link">
-        <div class="doc-icon">📋</div>
-        <div class="doc-info">
-          <div class="doc-name">UMA Syndic RL — Contrat</div>
-          <div class="doc-type">Projet de contrat · PDF</div>
-        </div>
-      </a>
-
+      </div>
+      <button class="accordion-btn" onclick="toggleAccordion(this)">
+        Voir les frais annexes &amp; détails
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <div class="accordion-panel">
+        <table class="fee-table">
+          <tr><td>Taux horaire HT</td><td>100 € HT</td></tr>
+          <tr><td>Révision annuelle</td><td>+3 %/an</td></tr>
+          <tr><td>Durée contrat</td><td>12 mois</td></tr>
+          <tr><td>État daté</td><td>300 € TTC ✓</td></tr>
+          <tr><td>Opposition mutation</td><td>120 € TTC</td></tr>
+          <tr><td>Gestionnaire dédié</td><td>Romain Laforet</td></tr>
+        </table>
+        <p style="margin-top:10px;font-style:italic">Contrat 12 mois = plus de souplesse. Syndic de proximité avec gestionnaire nommément identifié.</p>
+      </div>
     </div>
-  </section>
+
+  </div>
+</div>
+</section>
+
+<!-- SECTION 4: ANALYSE -->
+<section id="analyse" style="background:#fff;padding-top:40px">
+<div class="container pb-section">
+  <p class="section-label">Analyse multicritères</p>
+  <h2 class="section-title">Comparaison par critère</h2>
+  <p class="section-sub">Scores sur 5 critères clés — Foncia (gris) en référence.</p>
+
+  <div class="score-section">
+    <h3>Vue comparative des 5 syndics</h3>
+
+    <div class="score-criterion">
+      <div class="sc-header">
+        <span class="sc-label">💰 Rapport qualité-prix</span>
+        <span class="sc-winner" style="color:var(--green);font-weight:600">Matera Coop. en tête</span>
+      </div>
+      <div class="sc-bars">
+        <div class="sc-bar-row"><span class="sc-name">Foncia (réf.)</span><div class="sc-bar-wrap"><div class="sc-bar foncia" data-w="55"></div></div></div>
+        <div class="sc-bar-row"><span class="sc-name">Matera Coop.</span><div class="sc-bar-wrap"><div class="sc-bar matera-coop" data-w="95"></div></div></div>
+        <div class="sc-bar-row"><span class="sc-name">Matera Pro</span><div class="sc-bar-wrap"><div class="sc-bar matera-pro" data-w="55"></div></div></div>
+        <div class="sc-bar-row"><span class="sc-name">EM Gestion</span><div class="sc-bar-wrap"><div class="sc-bar em" data-w="50"></div></div></div>
+        <div class="sc-bar-row"><span class="sc-name">UMA RL</span><div class="sc-bar-wrap"><div class="sc-bar uma" data-w="80"></div></div></div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="score-criterion">
+      <div class="sc-header">
+        <span class="sc-label">🛠️ Services inclus dans le forfait</span>
+        <span class="sc-winner" style="color:#0ea5e9;font-weight:600">UMA RL en tête</span>
+      </div>
+      <div class="sc-bars">
+        <div class="sc-bar-row"><span class="sc-name">Foncia (réf.)</span><div class="sc-bar-wrap"><div class="sc-bar foncia" data-w="50"></div></div></div>
+        <div class="sc-bar-row"><span class="sc-name">Matera Coop.</span><div class="sc-bar-wrap"><div class="sc-bar matera-coop" data-w="70"></div></div></div>
+        <div class="sc-bar-row"><span class="sc-name">Matera Pro</span><div class="sc-bar-wrap"><div class="sc-bar matera-pro" data-w="85"></div></div></div>
+        <div class="sc-bar-row"><span class="sc-name">EM Gestion</span><div class="sc-bar-wrap"><div class="sc-bar em" data-w="55"></div></div></div>
+        <div class="sc-bar-row"><span class="sc-name">UMA RL</span><div class="sc-bar-wrap"><div class="sc-bar uma" data-w="90"></div></div></div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="score-criterion">
+      <div class="sc-header">
+        <span class="sc-label">⚡ Réactivité &amp; disponibilité</span>
+        <span class="sc-winner" style="color:#0ea5e9;font-weight:600">UMA RL en tête</span>
+      </div>
+      <div class="sc-bars">
+        <div class="sc-bar-row"><span class="sc-name">Foncia (réf.)</span><div class="sc-bar-wrap"><div class="sc-bar foncia" data-w="45"></div></div></div>
+        <div class="sc-bar-row"><span class="sc-name">Matera Coop.</span><div class="sc-bar-wrap"><div class="sc-bar matera-coop" data-w="65"></div></div></div>
+        <div class="sc-bar-row"><span class="sc-name">Matera Pro</span><div class="sc-bar-wrap"><div class="sc-bar matera-pro" data-w="70"></div></div></div>
+        <div class="sc-bar-row"><span class="sc-name">EM Gestion</span><div class="sc-bar-wrap"><div class="sc-bar em" data-w="60"></div></div></div>
+        <div class="sc-bar-row"><span class="sc-name">UMA RL</span><div class="sc-bar-wrap"><div class="sc-bar uma" data-w="95"></div></div></div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="score-criterion">
+      <div class="sc-header">
+        <span class="sc-label">📱 Outils numériques</span>
+        <span class="sc-winner" style="color:var(--green);font-weight:600">Matera (les deux) en tête</span>
+      </div>
+      <div class="sc-bars">
+        <div class="sc-bar-row"><span class="sc-name">Foncia (réf.)</span><div class="sc-bar-wrap"><div class="sc-bar foncia" data-w="50"></div></div></div>
+        <div class="sc-bar-row"><span class="sc-name">Matera Coop.</span><div class="sc-bar-wrap"><div class="sc-bar matera-coop" data-w="95"></div></div></div>
+        <div class="sc-bar-row"><span class="sc-name">Matera Pro</span><div class="sc-bar-wrap"><div class="sc-bar matera-pro" data-w="95"></div></div></div>
+        <div class="sc-bar-row"><span class="sc-name">EM Gestion</span><div class="sc-bar-wrap"><div class="sc-bar em" data-w="50"></div></div></div>
+        <div class="sc-bar-row"><span class="sc-name">UMA RL</span><div class="sc-bar-wrap"><div class="sc-bar uma" data-w="55"></div></div></div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="score-criterion">
+      <div class="sc-header">
+        <span class="sc-label">🔓 Flexibilité contractuelle</span>
+        <span class="sc-winner" style="color:var(--green);font-weight:600">Matera Coop. en tête</span>
+      </div>
+      <div class="sc-bars">
+        <div class="sc-bar-row"><span class="sc-name">Foncia (réf.)</span><div class="sc-bar-wrap"><div class="sc-bar foncia" data-w="25"></div></div></div>
+        <div class="sc-bar-row"><span class="sc-name">Matera Coop.</span><div class="sc-bar-wrap"><div class="sc-bar matera-coop" data-w="95"></div></div></div>
+        <div class="sc-bar-row"><span class="sc-name">Matera Pro</span><div class="sc-bar-wrap"><div class="sc-bar matera-pro" data-w="60"></div></div></div>
+        <div class="sc-bar-row"><span class="sc-name">EM Gestion</span><div class="sc-bar-wrap"><div class="sc-bar em" data-w="60"></div></div></div>
+        <div class="sc-bar-row"><span class="sc-name">UMA RL</span><div class="sc-bar-wrap"><div class="sc-bar uma" data-w="75"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- SECTION 5: FRAIS DÉTAILLÉS -->
+<section id="prix-detail">
+<div class="container pb-section">
+  <p class="section-label">Grille tarifaire complète</p>
+  <h2 class="section-title">Frais annexes détaillés</h2>
+  <p class="section-sub">Tous les frais TTC — vert = le moins cher, rouge = le plus cher sur ce poste.</p>
+
+  <div class="price-table-wrap">
+    <table class="price-table">
+      <thead>
+        <tr>
+          <th style="min-width:160px">Poste de frais</th>
+          <th class="col-foncia">Foncia<br><small style="font-weight:400;opacity:.7">(réf.)</small></th>
+          <th>Matera Coop.</th>
+          <th>Matera Pro</th>
+          <th>EM Gestion</th>
+          <th>UMA RL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Forfait annuel TTC</td>
+          <td class="col-foncia">4 202 €</td>
+          <td class="best-cell">2 680 €</td>
+          <td>5 040 €</td>
+          <td class="worst-cell">5 160 €</td>
+          <td>4 500 €</td>
+        </tr>
+        <tr>
+          <td>Taux horaire TTC</td>
+          <td class="col-foncia worst-cell">169 €</td>
+          <td>—</td>
+          <td>150 €</td>
+          <td>150 €</td>
+          <td class="best-cell">120 €</td>
+        </tr>
+        <tr>
+          <td>Mise en demeure</td>
+          <td class="col-foncia">65 €</td>
+          <td>—</td>
+          <td>—</td>
+          <td class="best-cell">42 €</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Relance amiable</td>
+          <td class="col-foncia">55 €</td>
+          <td>—</td>
+          <td>—</td>
+          <td class="best-cell">30 €</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>État daté (vente)</td>
+          <td class="col-foncia">380 €</td>
+          <td class="best-cell">Gratuit</td>
+          <td class="best-cell">Gratuit</td>
+          <td>380 €</td>
+          <td class="best-cell">300 €</td>
+        </tr>
+        <tr>
+          <td>Opposition mutation</td>
+          <td class="col-foncia worst-cell">350 €</td>
+          <td class="best-cell">Gratuit</td>
+          <td class="best-cell">Gratuit</td>
+          <td>150 €</td>
+          <td class="best-cell">120 €</td>
+        </tr>
+        <tr>
+          <td>AG (hors forfait)</td>
+          <td class="col-foncia">600 €</td>
+          <td>450–800 €</td>
+          <td class="best-cell">Incluse</td>
+          <td class="worst-cell">720 €</td>
+          <td class="best-cell">Incluse</td>
+        </tr>
+        <tr>
+          <td>Révision annuelle</td>
+          <td class="col-foncia">IPC + salaires</td>
+          <td>Max +5 %</td>
+          <td>IPC</td>
+          <td class="best-cell">Aucune</td>
+          <td>+3 %/an</td>
+        </tr>
+        <tr>
+          <td>Durée du contrat</td>
+          <td class="col-foncia worst-cell">19 mois</td>
+          <td class="best-cell">1 an (résil. 30j)</td>
+          <td>18 mois</td>
+          <td>18 mois</td>
+          <td class="best-cell">12 mois</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>
+
+<!-- SECTION 6: DOCUMENTS -->
+<section id="documents" style="background:#fff;padding-top:40px">
+<div class="container pb-section">
+  <p class="section-label">Sources</p>
+  <h2 class="section-title">Documents de référence</h2>
+  <p class="section-sub">Accédez aux propositions complètes et au contrat Foncia.</p>
+
+  <div class="pdf-grid">
+    <a href="assets/pdfs/foncia-contrat-signe.pdf" target="_blank" class="pdf-link">
+      <div class="pdf-icon">📄</div>
+      <div class="pdf-info">
+        <div class="name">Contrat Foncia signé</div>
+        <div class="desc">Contrat en cours · 19/02/2026 → 30/09/2027</div>
+      </div>
+    </a>
+    <a href="assets/pdfs/matera-cooperatif.pdf" target="_blank" class="pdf-link">
+      <div class="pdf-icon">📄</div>
+      <div class="pdf-info">
+        <div class="name">Matera Coopératif</div>
+        <div class="desc">Proposition syndic coopératif</div>
+      </div>
+    </a>
+    <a href="assets/pdfs/matera-pro-local.pdf" target="_blank" class="pdf-link">
+      <div class="pdf-icon">📄</div>
+      <div class="pdf-info">
+        <div class="name">Matera Pro Local</div>
+        <div class="desc">Proposition syndic classique</div>
+      </div>
+    </a>
+    <a href="assets/pdfs/em-gestion-contrat.pdf" target="_blank" class="pdf-link">
+      <div class="pdf-icon">📄</div>
+      <div class="pdf-info">
+        <div class="name">EM Gestion — Contrat</div>
+        <div class="desc">Projet de contrat FNAIM</div>
+      </div>
+    </a>
+    <a href="assets/pdfs/em-gestion-fiche-info.pdf" target="_blank" class="pdf-link">
+      <div class="pdf-icon">📄</div>
+      <div class="pdf-info">
+        <div class="name">EM Gestion — Fiche info</div>
+        <div class="desc">Fiche d'information précontractuelle</div>
+      </div>
+    </a>
+    <a href="assets/pdfs/uma-rl-proposition.pdf" target="_blank" class="pdf-link">
+      <div class="pdf-icon">📄</div>
+      <div class="pdf-info">
+        <div class="name">UMA RL — Proposition</div>
+        <div class="desc">Offre de service UMA RL</div>
+      </div>
+    </a>
+    <a href="assets/pdfs/uma-syndic-rl.pdf" target="_blank" class="pdf-link">
+      <div class="pdf-icon">📄</div>
+      <div class="pdf-info">
+        <div class="name">UMA Syndic RL</div>
+        <div class="desc">Documents complémentaires</div>
+      </div>
+    </a>
+  </div>
+</div>
+</section>
 
 </main>
 
-<!-- ╔══════════════════════════════════════╗ -->
-<!--              FOOTER                       -->
-<!-- ╚══════════════════════════════════════╝ -->
-<footer>
-  <p><strong>Syndicat des copropriétaires — 101 Boulevard Poniatowski 75012 Paris</strong> · Immatriculation AC1087048</p>
-  <p style="margin-top:4px;">Document établi par le conseil syndical à usage interne · Avril 2026 · Données extraites des propositions contractuelles officielles des candidats syndics</p>
+<footer class="site-footer">
+  <strong>101 Boulevard Poniatowski — 75012 Paris</strong> · Copropriété AC1087048 · 27 lots (15 principaux)<br>
+  Document à usage interne du conseil syndical · Mis à jour le 17 avril 2026
 </footer>
 
 <script>
-  // Smooth scroll for nav links
-  document.querySelectorAll('nav a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+function toggleAccordion(btn) {
+  const panel = btn.nextElementSibling;
+  const isOpen = panel.classList.contains('open');
+  btn.classList.toggle('open', !isOpen);
+  panel.classList.toggle('open', !isOpen);
+}
+
+// Animate bars when section comes into view
+const animateObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.querySelectorAll('.rank-bar[data-pct]').forEach(bar => {
+      bar.style.width = bar.dataset.pct + '%';
     });
+    entry.target.querySelectorAll('.sc-bar[data-w]').forEach(bar => {
+      bar.style.width = bar.dataset.w + '%';
+    });
+    animateObserver.unobserve(entry.target);
   });
+}, { threshold: 0.15 });
 
-  // Active nav link on scroll
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('nav a');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        navLinks.forEach(l => l.classList.remove('active'));
-        const active = document.querySelector(`nav a[href="#${entry.target.id}"]`);
-        if (active) active.classList.add('active');
-      }
-    });
-  }, { rootMargin: '-40% 0px -55% 0px' });
-  sections.forEach(s => observer.observe(s));
+document.querySelectorAll('#classement, #analyse').forEach(s => animateObserver.observe(s));
 
-  // Animate score bars on scroll
-  const scoreObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.querySelectorAll('.score-fill').forEach(bar => {
-          const w = bar.style.width;
-          bar.style.width = '0';
-          setTimeout(() => { bar.style.width = w; }, 50);
-        });
-        scoreObserver.unobserve(entry.target);
+// Active nav link
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-inner a');
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(a => a.classList.remove('active'));
+      const active = document.querySelector('.nav-inner a[href="#' + entry.target.id + '"]');
+      if (active) {
+        active.classList.add('active');
+        active.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
       }
-    });
-  }, { threshold: 0.2 });
-  document.querySelectorAll('.profile-card').forEach(c => scoreObserver.observe(c));
+    }
+  });
+}, { rootMargin: '-40% 0px -55%' });
+sections.forEach(s => navObserver.observe(s));
 </script>
-
 </body>
 </html>
