@@ -86,7 +86,9 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--body);line-
 .timeline-fill{height:8px;background:linear-gradient(90deg,var(--c-foncia),#2d4a7a);border-radius:4px;width:9.7%}
 .timeline-dot{position:absolute;top:50%;left:9.7%;transform:translate(-50%,-50%);width:16px;height:16px;border-radius:50%;background:var(--gold);border:2px solid #fff;box-shadow:0 0 0 3px rgba(201,168,76,.3)}
 .timeline-ends{display:flex;justify-content:space-between;font-size:10px;color:var(--subtle);font-weight:500}
-.contract-note{font-size:12px;color:var(--muted);margin-top:16px;padding-top:16px;border-top:1px solid var(--border);font-style:italic}
+.contract-note{font-size:13px;color:var(--amber);margin-top:16px;padding:14px 16px;border-radius:var(--r-xs);background:var(--amber-bg);border:1px solid var(--amber-bd);display:flex;gap:10px;align-items:flex-start}
+.contract-note .nota-label{font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--amber);flex-shrink:0;margin-top:1px}
+.contract-note .nota-text{color:#92400e;font-size:13px;line-height:1.5}
 
 /* ── TRANSITION ── */
 .transition-label{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:20px;padding:16px 20px;background:var(--surface);border-radius:var(--r-sm);border-left:3px solid var(--gold);box-shadow:var(--sh-sm)}
@@ -253,7 +255,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--body);line-
       <span style="color:var(--gold);font-weight:700">◆ Aujourd'hui — 17 avr. 2026</span>
       <span>30 sept. 2027</span>
     </div>
-    <p class="contract-note">Le quitus a été accordé à Foncia lors de l'assemblée générale pour la gestion précédente.</p>
+    <p class="contract-note"><span class="nota-label">Nota</span><span class="nota-text">Le quitus a été accordé à Foncia lors de l'assemblée générale de Février 2026 pour la gestion précédente.</span></p>
   </div>
 
   <div class="transition-label">
@@ -271,7 +273,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--body);line-
       <div class="exit-num exit-num-amber">02</div>
       <span class="exit-badge exit-badge-amber">Incertaine</span>
       <div class="exit-title">Voie négociée</div>
-      <div class="exit-text">Négocier une résiliation anticipée à l'amiable avec Foncia. Dépend entièrement de leur accord.</div>
+      <div class="exit-text">Négocier une résiliation anticipée à l'amiable avec Foncia. Dépend de la volonté de Foncia.</div>
     </div>
     <div class="exit-card exit-card-green">
       <div class="exit-num exit-num-green">03</div>
