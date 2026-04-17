@@ -197,13 +197,25 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--body);line-
 /* ── MOBILE COMPARE CARDS ── */
 .mobile-compare{display:none}
 @media(max-width:660px){
+  /* Tableau → cartes */
   .compare-wrap{display:none}
   .mobile-compare{display:flex;flex-direction:column;gap:14px}
-  /* ranking layout */
-  .rank-label{min-width:80px}
-  .rank-delta{min-width:52px;font-size:11px}
-  .rank-bar{font-size:10px;padding:0 6px}
-  /* conclusion */
+  /* Classement : deux lignes par entrée */
+  .rank-row{flex-wrap:wrap;gap:6px 10px;padding:12px 0}
+  .rank-pos{flex-shrink:0;order:1}
+  .rank-label{flex:1;min-width:0;order:2}
+  .rank-delta{order:3;flex-shrink:0;min-width:0;font-size:12px}
+  .rank-bar-outer{flex:0 0 100%;order:4;height:24px;margin-top:2px}
+  .rank-bar{height:24px;font-size:11px;padding:0 8px}
+  /* Section contractuelle : masquer les blocs de dates */
+  .contract-dates{display:none}
+  /* Cards 01/02/03 : compactes */
+  .exit-grid{gap:10px}
+  .exit-card{padding:14px 14px}
+  .exit-num{font-size:24px;margin-bottom:6px}
+  .exit-title{font-size:13px;margin-bottom:5px}
+  .exit-text{font-size:12px;line-height:1.45}
+  /* Conclusion */
   .conclusion-body{flex-direction:column}
 }
 .mc-card{background:#fff;border-radius:var(--r);box-shadow:var(--sh);overflow:hidden}
@@ -438,6 +450,27 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--body);line-
 
   <!-- Cartes mobiles (masquées sur desktop, visibles < 660px) -->
   <div class="mobile-compare">
+
+    <!-- Foncia référence -->
+    <div class="mc-card">
+      <div class="mc-head" style="background:linear-gradient(135deg,#0f1f3d,#1e3a5f)">
+        <span class="mc-head-name">Foncia</span>
+        <span class="mc-head-role">Syndic sortant · Référence</span>
+        <span class="mc-head-price">4 202 €<span style="font-size:13px;font-weight:400;opacity:.8"> TTC/an</span></span>
+        <span style="display:inline-block;margin-top:6px;font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;background:rgba(255,255,255,.15);color:rgba(255,255,255,.9)">BASE DE COMPARAISON</span>
+      </div>
+      <div class="mc-rows">
+        <div class="mc-row"><span class="mc-lbl">Taux horaire</span><span class="mc-val n">169 €/h</span></div>
+        <div class="mc-row"><span class="mc-lbl">Visites / an</span><span class="mc-val n">2 (2h min)</span></div>
+        <div class="mc-row"><span class="mc-lbl">Réunions CS</span><span class="mc-val n">2</span></div>
+        <div class="mc-row"><span class="mc-lbl">AG (hors forfait)</span><span class="mc-val n">600 € (non incluse)</span></div>
+        <div class="mc-row"><span class="mc-lbl">État daté</span><span class="mc-val n">380 €</span></div>
+        <div class="mc-row"><span class="mc-lbl">Opposition mutation</span><span class="mc-val n">350 €</span></div>
+        <div class="mc-row"><span class="mc-lbl">Révision prix</span><span class="mc-val n">IPC + salaires</span></div>
+        <div class="mc-row"><span class="mc-lbl">Durée contrat</span><span class="mc-val n">19 mois</span></div>
+      </div>
+    </div>
+
     <div class="mc-card">
       <div class="mc-head" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">
         <span class="mc-head-name">Matera Pro</span>
